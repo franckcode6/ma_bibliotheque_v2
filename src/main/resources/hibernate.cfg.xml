@@ -21,4 +21,3 @@
             <mapping class="fr.humanbooster.cap_entreprise.business.Utilisateur"/>-->
     </session-factory>
 </hibernate-configuration>
-
