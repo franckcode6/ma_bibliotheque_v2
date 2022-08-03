@@ -5,33 +5,34 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
-public class Auteur {
+public class Pret {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    private String nom;
-
-    @NotBlank
-    private String prenom;
+    @NotNull
+    private LocalDate dateDebut;
 
     @NotNull
-    private LocalDate dateDeNaissance;
+    private LocalDate dateFin;
 
-    @NotBlank
-    private String nationalite;
+    @NotNull
+    @ManyToOne
+    private Utilisateur utilisateur;
 
-    @OneToMany(mappedBy = "auteur")
-    private List<Livre> livres;
+    @NotNull
+    @ManyToOne
+    private Livre livre;
+
+    public Pret() {
+        this.dateDebut = LocalDate.now();
+        this.dateFin = LocalDate.now().plusDays(30);
+    }
 }

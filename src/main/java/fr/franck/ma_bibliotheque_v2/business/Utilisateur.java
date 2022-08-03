@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Data
@@ -28,7 +30,11 @@ public abstract class Utilisateur {
     protected String email;
 
     @NotBlank
+    @Size(min = 4, max = 15)
     protected String motDePasse;
+
+    @OneToMany(mappedBy = "utilisateur")
+    protected List<Pret> prets;
 
     public Utilisateur(String nom, String prenom, String email, String motDePasse) {
         this.nom = nom;

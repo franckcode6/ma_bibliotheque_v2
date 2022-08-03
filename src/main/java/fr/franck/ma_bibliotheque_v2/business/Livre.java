@@ -4,17 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class Livre {
 
@@ -33,4 +30,23 @@ public class Livre {
 
     @NotBlank
     private boolean estDisponible;
+
+    @ManyToOne
+    private Auteur auteur;
+
+    @ManyToOne
+    private Categorie categorie;
+
+    @ManyToOne
+    private Type type;
+
+    @ManyToOne
+    private Editeur editeur;
+
+    @OneToMany(mappedBy = "livre")
+    private List<Pret> prets;
+
+    public Livre() {
+        this.estDisponible = true;
+    }
 }
