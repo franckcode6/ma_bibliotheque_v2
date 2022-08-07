@@ -45,6 +45,9 @@ public class AjoutDonneesInitiales implements CommandLineRunner {
         //AUTEURS
         ajouterAuteurs();
 
+        //CATEGORIES
+        ajouterCategories();
+
         Date dateFin = new Date();
         System.out.println("Données initiales générées en " + (dateFin.getTime() - dateDebut.getTime()) + " ms");
     }
@@ -61,5 +64,23 @@ public class AjoutDonneesInitiales implements CommandLineRunner {
             }
         }
         auteurDao.saveAll(auteurs);
+    }
+
+    private void ajouterCategories() {
+        if (categorieDao.count() == 0) {
+            categories.add(new Categorie("Jeunesse"));
+			categories.add(new Categorie("Action"));
+			categories.add(new Categorie("Litterature classique"));
+			categories.add(new Categorie("Theatre"));
+			categories.add(new Categorie("Science Fiction"));
+			categories.add(new Categorie("Autobiographie"));
+			categories.add(new Categorie("Conte"));
+			categories.add(new Categorie("Drame"));
+			categories.add(new Categorie("Aventure"));
+			categories.add(new Categorie("Humour"));
+			categories.add(new Categorie("Horreur"));
+			categories.add(new Categorie("Ado"));
+			categorieDao.saveAll(categories);
+        }
     }
 }

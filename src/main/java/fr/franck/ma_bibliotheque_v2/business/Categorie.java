@@ -23,4 +23,8 @@ public class Categorie {
 
     @OneToMany(mappedBy = "categorie")
     private List<Livre> livres;
+
+    public Categorie(String nom) {
+        this.nom = nom;
+    }
 }
