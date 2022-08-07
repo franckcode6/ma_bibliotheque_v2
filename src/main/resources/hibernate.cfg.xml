@@ -9,15 +9,14 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
 
-        <!--	<mapping class="fr.humanbooster.cap_entreprise.business.Avis"/>
-            <mapping class="fr.humanbooster.cap_entreprise.business.Classification"/>
-            <mapping class="fr.humanbooster.cap_entreprise.business.Editeur"/>
-            <mapping class="fr.humanbooster.cap_entreprise.business.Genre"/>
-            <mapping class="fr.humanbooster.cap_entreprise.business.Jeu"/>
-            <mapping class="fr.humanbooster.cap_entreprise.business.Joueur"/>
-            <mapping class="fr.humanbooster.cap_entreprise.business.ModeleEconomique"/>
-            <mapping class="fr.humanbooster.cap_entreprise.business.Moderateur"/>
-            <mapping class="fr.humanbooster.cap_entreprise.business.Plateforme"/>
-            <mapping class="fr.humanbooster.cap_entreprise.business.Utilisateur"/>-->
+        <mapping class="fr.franck.ma_bibliotheque_v2.business.Livre"/>
+        <mapping class="fr.franck.ma_bibliotheque_v2.business.Auteur"/>
+        <mapping class="fr.franck.ma_bibliotheque_v2.business.Editeur"/>
+        <mapping class="fr.franck.ma_bibliotheque_v2.business.Type"/>
+        <mapping class="fr.franck.ma_bibliotheque_v2.business.Categorie"/>
+        <mapping class="fr.franck.ma_bibliotheque_v2.business.Utilisateur"/>
+        <mapping class="fr.franck.ma_bibliotheque_v2.business.Lecteur"/>
+        <mapping class="fr.franck.ma_bibliotheque_v2.business.Admin"/>
+        <mapping class="fr.franck.ma_bibliotheque_v2.business.Pret"/>
     </session-factory>
 </hibernate-configuration>

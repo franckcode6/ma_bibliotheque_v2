@@ -34,4 +34,14 @@ public class Auteur {
 
     @OneToMany(mappedBy = "auteur")
     private List<Livre> livres;
+
+    public Auteur(String nom,
+                  String prenom,
+                  LocalDate dateDeNaissance,
+                  String nationalite) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateDeNaissance = dateDeNaissance;
+        this.nationalite = nationalite;
+    }
 }
