@@ -28,7 +28,6 @@ public class Livre {
     @NotNull
     private LocalDate dateDeParution;
 
-    @NotBlank
     private boolean estDisponible;
 
     @ManyToOne
@@ -48,5 +47,15 @@ public class Livre {
 
     public Livre() {
         this.estDisponible = true;
+    }
+
+    public Livre(String titre, String isbn, LocalDate dateDeParution, Auteur auteur, Categorie categorie, Editeur editeur, Type type) {
+        this.titre = titre;
+        this.isbn = isbn;
+        this.dateDeParution = dateDeParution;
+        this.auteur = auteur;
+        this.categorie = categorie;
+        this.editeur = editeur;
+        this.type = type;
     }
 }

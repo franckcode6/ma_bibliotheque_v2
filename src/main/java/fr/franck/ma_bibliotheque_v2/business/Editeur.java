@@ -23,4 +23,8 @@ public class Editeur {
 
     @OneToMany(mappedBy = "editeur")
     private List<Livre> livres;
+
+    public Editeur(String nom) {
+        this.nom = nom;
+    }
 }
