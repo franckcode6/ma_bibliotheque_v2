@@ -50,6 +50,7 @@ public class Livre {
     }
 
     public Livre(String titre, String isbn, LocalDate dateDeParution, Auteur auteur, Categorie categorie, Editeur editeur, Type type) {
+        this();
         this.titre = titre;
         this.isbn = isbn;
         this.dateDeParution = dateDeParution;
