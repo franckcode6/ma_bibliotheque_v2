@@ -61,6 +61,18 @@
         </c:forEach>
         </tbody>
     </table>
+
+    <h3 class="text-center mt-5">
+        <c:if test="${!pageDeLivres.first}">
+            <a href="livres?page=0&sort=${sort}">&#x23EE;</a>
+            <a href="livres?page=${pageDeLivres.number-1}&sort=${sort}">&#x23EA;</a>
+        </c:if>
+        Page ${pageDeLivres.getNumber()+1}
+        <c:if test="${!pageDeLivres.last}">
+            <a href="livres?page=${pageDeLivres.number+1}&sort=${sort}">&#x23E9;</a>
+            <a href="livres?page=${pageDeLivres.totalPages - 1}&sort=${sort}">&#x23ED;</a>
+        </c:if>
+    </h3>
 </main>
 </body>
 </html>

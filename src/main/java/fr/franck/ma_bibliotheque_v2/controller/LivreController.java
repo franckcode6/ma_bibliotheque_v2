@@ -16,7 +16,7 @@ public class LivreController {
 
     private final LivreService livreService;
 
-    @GetMapping("/")
+    @GetMapping("livres")
     public ModelAndView livresGet(@PageableDefault(size = NB_LIVRES_PAR_PAGE, sort = "dateDeParution")
                                   Pageable pageable) {
         ModelAndView mav = new ModelAndView();
