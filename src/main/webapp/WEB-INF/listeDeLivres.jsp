@@ -41,8 +41,8 @@
         </thead>
 
         <tbody>
-        <jsp:useBean id="livres" scope="request" type="java.util.List"/>
-        <c:forEach items="${livres}" var="livre">
+
+        <c:forEach items="${pageDeLivres.content}" var="livre">
             <tr>
                 <th>${livre.id}</th>
                 <td>${livre.titre}</td>
