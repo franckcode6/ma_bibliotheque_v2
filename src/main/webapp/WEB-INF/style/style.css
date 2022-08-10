@@ -25,7 +25,7 @@ li {
   margin: 0 10px;
 }
 
-a {
+.lien {
   font-family: "Arima", cursive;
   text-decoration: none;
   color: inherit;

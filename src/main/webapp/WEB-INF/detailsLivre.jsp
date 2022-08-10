@@ -9,6 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>DETAILS LIVRE</h1>
+    <h1>DETAILS LIVRE ${livre.auteur.nom}</h1>
 </body>
 </html>

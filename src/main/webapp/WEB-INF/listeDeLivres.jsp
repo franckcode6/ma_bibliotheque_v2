@@ -18,7 +18,7 @@
     <div class="container d-flex align-items-center justify-content-between">
         <h1>Ma bibliothèque</h1>
         <nav>
-            <a href="#">Se connecter</a>
+            <a href="#" class="lien">Se connecter</a>
         </nav>
     </div>
 </header>
@@ -45,7 +45,7 @@
         <c:forEach items="${pageDeLivres.content}" var="livre">
             <tr>
                 <th>${livre.id}</th>
-                <td><a href="livres/details?id=${livre.id}"> ${livre.titre}</a></td>
+                <td>${livre.titre}</td>
                 <td>${livre.auteur.nom} ${livre.auteur.prenom}</td>
                 <td>${livre.editeur.nom}</td>
                 <td>${livre.dateDeParution}</td>
@@ -55,7 +55,7 @@
                     <c:if test="${livre.estDisponible eq false}">Emprunté</c:if>
                 </th>
                 <td>
-                    <button class="btn btn-primary">Détails</button>
+                    <a href="livres/details?id=${livre.id}"><button class="btn btn-primary">Détails</button></a>
                 </td>
             </tr>
         </c:forEach>
