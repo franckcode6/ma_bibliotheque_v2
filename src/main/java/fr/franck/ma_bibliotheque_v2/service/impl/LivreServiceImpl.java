@@ -25,4 +25,10 @@ public class LivreServiceImpl implements LivreService {
     public Page<Livre> recupererLivres(Pageable pageable) {
         return livreDao.findAll(pageable);
     }
+
+    @Override
+    public Livre recupererLivre(Long id) {
+
+        return livreDao.findById(id).orElse(null);
+    }
 }

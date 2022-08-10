@@ -10,4 +10,6 @@ public interface LivreService {
     List<Livre> recupererLivres();
 
     Page<Livre> recupererLivres(Pageable pageable);
+
+    Livre recupererLivre(Long id);
 }

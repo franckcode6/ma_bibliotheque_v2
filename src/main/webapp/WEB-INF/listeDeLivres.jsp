@@ -45,7 +45,7 @@
         <c:forEach items="${pageDeLivres.content}" var="livre">
             <tr>
                 <th>${livre.id}</th>
-                <td>${livre.titre}</td>
+                <td><a href="livres/details?id=${livre.id}"> ${livre.titre}</a></td>
                 <td>${livre.auteur.nom} ${livre.auteur.prenom}</td>
                 <td>${livre.editeur.nom}</td>
                 <td>${livre.dateDeParution}</td>
