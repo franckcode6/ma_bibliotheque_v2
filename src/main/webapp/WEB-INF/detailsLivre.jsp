@@ -23,9 +23,22 @@
     </div>
 </header>
 <main class="container">
-    <h2>${livre.id} - ${livre.titre}</h2>
-
-
+    <section class="text-center">
+        <h2>${livre.id} - ${livre.titre} (${livre.type.nom})</h2>
+        <h3>Auteur.ice : ${livre.auteur.prenom} ${livre.auteur.nom} (${livre.auteur.nationalite})</h3>
+        <ul>
+            <li>Date de parution : ${livre.dateDeParution}</li>
+            <li>Catégorie : ${livre.categorie.nom}</li>
+            <li>Disponibilité :
+                <c:if test="${livre.estDisponible eq true}">
+                    Disponible pour l'emprunt
+                </c:if>
+                <c:if test="${livre.estDisponible eq false}">
+                    Emprunté
+                </c:if>
+            </li>
+        </ul>
+    </section>
 </main>
 </body>
 </html>
