@@ -25,7 +25,7 @@
 </header>
 <main class="container">
     <h2>Nouveau Pret</h2>
-    <form action="post">
+    <form method="post">
         <label for="idUtilisateur">ID du lecteur</label>
         <br>
         <input type="number" id="idUtilisateur" name="id">
