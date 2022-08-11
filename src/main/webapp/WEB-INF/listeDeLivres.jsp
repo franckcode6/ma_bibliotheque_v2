@@ -17,8 +17,9 @@
 <header class="mb-5">
     <div class="container d-flex align-items-center justify-content-between">
         <h1>Ma bibliothèque</h1>
-        <nav>
-            <a href="#" class="lien">Se connecter</a>
+        <nav class="d-flex justify-content-between">
+            <a href="pret" class="lien">Pret</a>
+            <a href="#" class="lien ms-3">Se connecter</a>
         </nav>
     </div>
 </header>

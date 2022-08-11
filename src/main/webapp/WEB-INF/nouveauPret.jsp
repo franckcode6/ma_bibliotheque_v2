@@ -1,12 +1,12 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="fre">
 <head>
     <meta charset="ISO-8859-1">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ma Bibliotheque v2 - Details du livre</title>
+    <title>Nouveau Pret</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <style>
@@ -24,22 +24,15 @@
     </div>
 </header>
 <main class="container">
-    <section class="text-center">
-        <h2>${livre.id} - ${livre.titre} (${livre.type.nom})</h2>
-        <h3>Auteur.ice : ${livre.auteur.prenom} ${livre.auteur.nom} (${livre.auteur.nationalite})</h3>
-        <ul>
-            <li>Date de parution : ${livre.dateDeParution}</li>
-            <li>Catégorie : ${livre.categorie.nom}</li>
-            <li>Disponibilité :
-                <c:if test="${livre.estDisponible eq true}">
-                    Disponible pour l'emprunt
-                </c:if>
-                <c:if test="${livre.estDisponible eq false}">
-                    Emprunté
-                </c:if>
-            </li>
-        </ul>
-    </section>
+    <h2>Nouveau Pret</h2>
+    <form action="post">
+        <label for="idUtilisateur">ID du lecteur</label>
+        <br>
+        <input type="number" id="idUtilisateur" name="id">
+        <br>
+        <input type="submit" value="Saisir" class="mt-3 btn btn-sm btn-success">
+    </form>
 </main>
+
 </body>
 </html>
