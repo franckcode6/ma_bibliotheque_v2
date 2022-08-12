@@ -24,14 +24,22 @@
     </div>
 </header>
 <main class="container">
-    <h2>${lecteur.id} - ${lecteur.nom} ${lecteur.prenom}</h2>
-    <ul>
-        <li>Email : ${lecteur.email}</li>
-        <li>Né le : ${lecteur.dateDeNaissance}</li>
-    </ul>
-    <a href="/pret/ajout/lecteur?id=${lecteur.id}">
-        <button class="btn btn-success">Nouveau pret</button>
-    </a>
+    <h2>Ajouter un pret</h2>
+    <form method="post">
+        <label for="livre1Id">ID du livre 1</label>
+        <input type="number" id="livre1Id" name="LIVRE1_ID">
+
+        <label for="livre2Id">ID du livre 2</label>
+        <input type="number" id="livre2Id" name="LIVRE2_ID">
+
+        <label for="livre3Id">ID du livre 3</label>
+        <input type="number" id="livre3Id" name="LIVRE3_ID">
+
+        <label for="livre4Id">ID du livre 4</label>
+        <input type="number" id="livre4Id" name="LIVRE4_ID">
+        
+        <input type="submit" value="Ajouter">
+    </form>
 </main>
 </body>
 </html>

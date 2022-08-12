@@ -40,14 +40,38 @@ public class PretController {
         return mav;
     }
 
-    @PostMapping("pret/lecteur")
+    @PostMapping("pret/ajout/lecteur")
     public ModelAndView pretLecteurPost(@RequestParam(name = "id") Long id,
-                                        @RequestParam(name = "LIVRE_ID") Long livreId) {
-        Livre livre = livreService.recupererLivre(livreId);
-        livre.setEstDisponible(false);
+                                        @RequestParam(name = "LIVRE1_ID") Long livre1Id,
+                                        @RequestParam(name = "LIVRE2_ID", required = false) Long livre2Id,
+                                        @RequestParam(name = "LIVRE3_ID", required = false) Long livre3Id,
+                                        @RequestParam(name = "LIVRE4_ID", required = false) Long livre4Id) {
+        Lecteur lecteur = lecteurService.recupererLecteur(id);
+        Livre livre1 = livreService.recupererLivre(livre1Id);
+        Livre livre2 = livreService.recupererLivre(livre2Id);
+        Livre livre3 = livreService.recupererLivre(livre3Id);
+        Livre livre4 = livreService.recupererLivre(livre4Id);
 
-        pretService.ajouterPret(lecteurService.recupererLecteur(id), livre);
+        livre1.setEstDisponible(false);
+        livre2.setEstDisponible(false);
+        livre3.setEstDisponible(false);
+        livre4.setEstDisponible(false);
 
+        pretService.ajouterPret(lecteur, livre1);
+        pretService.ajouterPret(lecteur, livre2);
+        pretService.ajouterPret(lecteur, livre3);
+        pretService.ajouterPret(lecteur, livre4);
+        
         return new ModelAndView("redirect:/pret");
+    }
+
+    @GetMapping("pret/ajout/lecteur")
+    public ModelAndView pretLecteurAjoutGet(@RequestParam(name = "id") Long id) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.addObject("lecteur", lecteurService.recupererLecteur(id));
+        mav.setViewName("pretLecteurAjout");
+
+        return mav;
     }
 }
