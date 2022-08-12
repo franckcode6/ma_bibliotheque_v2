@@ -30,7 +30,7 @@
         <li>Né le : ${lecteur.dateDeNaissance}</li>
     </ul>
 
-    <form action="" method="post">
+    <form method="post">
         <h2>Ajouter un pret</h2>
         <label for="livreID">ID du livre</label>
         <input type="number" id="livreID" name="LIVRE_ID">
