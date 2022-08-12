@@ -26,19 +26,27 @@
 <main class="container">
     <h2>Ajouter un pret</h2>
     <form method="post">
-        <label for="livre1Id">ID du livre 1</label>
-        <input type="number" id="livre1Id" name="LIVRE1_ID">
+        <div class="mb-3">
+            <label for="livre1Id" class="form-label">ID du livre 1</label>
+            <input type="number" id="livre1Id" name="LIVRE1_ID" class="form-control">
+        </div>
 
-        <label for="livre2Id">ID du livre 2</label>
-        <input type="number" id="livre2Id" name="LIVRE2_ID">
+        <div class="mb-3">
+            <label for="livre2Id" class="form-label">ID du livre 2</label>
+            <input type="number" id="livre2Id" name="LIVRE2_ID" class="form-control">
+        </div>
 
-        <label for="livre3Id">ID du livre 3</label>
-        <input type="number" id="livre3Id" name="LIVRE3_ID">
+        <div class="mb-3">
+            <label for="livre3Id" class="form-label">ID du livre 3</label>
+            <input type="number" id="livre3Id" name="LIVRE3_ID" class="form-control">
+        </div>
 
-        <label for="livre4Id">ID du livre 4</label>
-        <input type="number" id="livre4Id" name="LIVRE4_ID">
-        
-        <input type="submit" value="Ajouter">
+        <div class="mb-3">
+            <label for="livre4Id" class="form-label">ID du livre 4</label>
+            <input type="number" id="livre4Id" name="LIVRE4_ID" class="form-control">
+        </div>
+
+        <input type="submit" value="Ajouter" class="btn btn-success">
     </form>
 </main>
 </body>

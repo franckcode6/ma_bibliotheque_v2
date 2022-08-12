@@ -2,7 +2,6 @@ package fr.franck.ma_bibliotheque_v2.controller;
 
 import fr.franck.ma_bibliotheque_v2.business.Lecteur;
 import fr.franck.ma_bibliotheque_v2.business.Livre;
-import fr.franck.ma_bibliotheque_v2.business.Pret;
 import fr.franck.ma_bibliotheque_v2.service.LecteurService;
 import fr.franck.ma_bibliotheque_v2.service.LivreService;
 import fr.franck.ma_bibliotheque_v2.service.PretService;
@@ -61,7 +60,7 @@ public class PretController {
         pretService.ajouterPret(lecteur, livre2);
         pretService.ajouterPret(lecteur, livre3);
         pretService.ajouterPret(lecteur, livre4);
-        
+
         return new ModelAndView("redirect:/pret");
     }
 
