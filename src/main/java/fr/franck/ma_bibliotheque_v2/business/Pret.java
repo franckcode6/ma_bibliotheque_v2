@@ -1,16 +1,15 @@
 package fr.franck.ma_bibliotheque_v2.business;
 
 import jdk.jshell.execution.Util;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 public class Pret {
 
@@ -41,5 +40,14 @@ public class Pret {
         this();
         this.utilisateur = utilisateur;
         this.livre = livre;
+    }
+
+    @Override
+    public String toString() {
+        return "Pret{" +
+                "id=" + id +
+                ", dateDebut=" + dateDebut +
+                ", dateFin=" + dateFin +
+                '}';
     }
 }

@@ -34,7 +34,19 @@ public class PretController {
         ModelAndView mav = new ModelAndView();
 
         mav.addObject("lecteur", lecteurService.recupererLecteur(id));
+        mav.addObject("prets", pretService.recupererPrets(id));
+        System.out.println(pretService.recupererPrets(id));
         mav.setViewName("pretLecteur");
+
+        return mav;
+    }
+
+    @GetMapping("pret/ajout/lecteur")
+    public ModelAndView pretLecteurAjoutGet(@RequestParam(name = "id") Long id) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.addObject("lecteur", lecteurService.recupererLecteur(id));
+        mav.setViewName("pretLecteurAjout");
 
         return mav;
     }
@@ -64,13 +76,4 @@ public class PretController {
         return new ModelAndView("redirect:/pret");
     }
 
-    @GetMapping("pret/ajout/lecteur")
-    public ModelAndView pretLecteurAjoutGet(@RequestParam(name = "id") Long id) {
-        ModelAndView mav = new ModelAndView();
-
-        mav.addObject("lecteur", lecteurService.recupererLecteur(id));
-        mav.setViewName("pretLecteurAjout");
-
-        return mav;
-    }
 }

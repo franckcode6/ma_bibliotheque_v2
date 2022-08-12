@@ -8,6 +8,8 @@ import fr.franck.ma_bibliotheque_v2.service.PretService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class PretServiceImpl implements PretService {
@@ -17,5 +19,10 @@ public class PretServiceImpl implements PretService {
     @Override
     public void ajouterPret(Utilisateur utilisateur, Livre livre) {
         pretDao.save(new Pret(utilisateur, livre));
+    }
+
+    @Override
+    public List<Pret> recupererPrets(Long id) {
+        return pretDao.findAllByUtilisateurId(id);
     }
 }

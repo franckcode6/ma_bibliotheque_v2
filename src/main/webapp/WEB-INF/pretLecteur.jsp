@@ -25,13 +25,37 @@
 </header>
 <main class="container">
     <h2>${lecteur.id} - ${lecteur.nom} ${lecteur.prenom}</h2>
-    <ul>
-        <li>Email : ${lecteur.email}</li>
-        <li>Né le : ${lecteur.dateDeNaissance}</li>
-    </ul>
-    <a href="/pret/ajout/lecteur?id=${lecteur.id}">
-        <button class="btn btn-success">Nouveau pret</button>
-    </a>
+    <div class="d-flex justify-content-between">
+        <ul>
+            <li>Email : ${lecteur.email}</li>
+            <li>Né le : ${lecteur.dateDeNaissance}</li>
+        </ul>
+        <a href="/pret/ajout/lecteur?id=${lecteur.id}">
+            <button class="btn btn-success">Nouveau pret</button>
+        </a>
+    </div>
+
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Livre</th>
+            <th>Date de pret</th>
+            <th>Date de retour</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${prets}" var="pret">
+            <tr>
+                <th>${pret.id}</th>
+                <td>${pret.livre.titre}</td>
+                <td>${pret.dateDebut}</td>
+                <td>${pret.dateFin}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 </main>
 </body>
 </html>
