@@ -13,30 +13,31 @@
         <%@include file="style/style.css"%>
     </style>
 </head>
+
 <body>
 <header class="mb-5">
     <div class="container d-flex align-items-center justify-content-between">
-        <h1>Ma bibliothèque</h1>
+        <h1><a href="/livres">Ma bibliothèque</a></h1>
         <nav class="d-flex justify-content-between">
             <a href="pret" class="lien">Pret</a>
             <a href="#" class="lien ms-3">Se connecter</a>
         </nav>
     </div>
 </header>
+
 <main class="container">
     <div>
-    <h2>${lecteur.id} - ${lecteur.nom} ${lecteur.prenom}</h2>
-    <div class="d-flex justify-content-between align-items-baseline">
-        <ul>
-            <li>Email : ${lecteur.email}</li>
-            <li>Né le : ${lecteur.dateDeNaissance}</li>
-        </ul>
-        <a href="/pret/ajout/lecteur?id=${lecteur.id}">
-            <button class="btn btn-success">Nouveau pret</button>
-        </a>
+        <h2>${lecteur.id} - ${lecteur.nom} ${lecteur.prenom}</h2>
+        <div class="d-flex justify-content-between align-items-baseline">
+            <ul>
+                <li>Email : ${lecteur.email}</li>
+                <li>Né le : ${lecteur.dateDeNaissance}</li>
+            </ul>
+            <a href="/pret/ajout/lecteur?id=${lecteur.id}">
+                <button class="btn btn-success">Nouveau pret</button>
+            </a>
+        </div>
     </div>
-    </div>
-
 
     <table class="mt-5 table">
         <thead class="table table-info">

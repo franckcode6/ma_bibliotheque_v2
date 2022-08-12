@@ -13,16 +13,18 @@
         <%@include file="style/style.css"%>
     </style>
 </head>
+
 <body>
 <header class="mb-5">
     <div class="container d-flex align-items-center justify-content-between">
-        <h1>Ma bibliothèque</h1>
+        <h1><a href="/livres">Ma bibliothèque</a></h1>
         <nav class="d-flex justify-content-between">
             <a href="pret" class="lien">Pret</a>
             <a href="#" class="lien ms-3">Se connecter</a>
         </nav>
     </div>
 </header>
+
 <main class="container">
     <h2>Liste des livres</h2>
 
@@ -42,7 +44,6 @@
         </thead>
 
         <tbody>
-
         <c:forEach items="${pageDeLivres.content}" var="livre">
             <tr>
                 <th>${livre.id}</th>
@@ -56,7 +57,9 @@
                     <c:if test="${livre.estDisponible eq false}">Emprunté</c:if>
                 </th>
                 <td>
-                    <a href="livres/details?id=${livre.id}"><button class="btn btn-primary">Détails</button></a>
+                    <a href="livres/details?id=${livre.id}">
+                        <button class="btn btn-primary">Détails</button>
+                    </a>
                 </td>
             </tr>
         </c:forEach>
