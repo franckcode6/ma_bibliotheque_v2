@@ -1,5 +1,6 @@
 package fr.franck.ma_bibliotheque_v2.business;
 
+import jdk.jshell.execution.Util;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,5 +35,11 @@ public class Pret {
     public Pret() {
         this.dateDebut = LocalDate.now();
         this.dateFin = LocalDate.now().plusDays(30);
+    }
+
+    public Pret(Utilisateur utilisateur, Livre livre) {
+        this();
+        this.utilisateur = utilisateur;
+        this.livre = livre;
     }
 }
