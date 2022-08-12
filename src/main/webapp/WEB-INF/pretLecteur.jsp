@@ -24,8 +24,9 @@
     </div>
 </header>
 <main class="container">
+    <div>
     <h2>${lecteur.id} - ${lecteur.nom} ${lecteur.prenom}</h2>
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between align-items-baseline">
         <ul>
             <li>Email : ${lecteur.email}</li>
             <li>Né le : ${lecteur.dateDeNaissance}</li>
@@ -34,10 +35,11 @@
             <button class="btn btn-success">Nouveau pret</button>
         </a>
     </div>
+    </div>
 
 
-    <table>
-        <thead>
+    <table class="mt-5 table">
+        <thead class="table table-info">
         <tr>
             <th>ID</th>
             <th>Livre</th>
