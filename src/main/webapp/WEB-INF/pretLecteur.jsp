@@ -25,6 +25,17 @@
 </header>
 <main class="container">
     <h2>${lecteur.id} - ${lecteur.nom} ${lecteur.prenom}</h2>
+    <ul>
+        <li>Email : ${lecteur.email}</li>
+        <li>Né le : ${lecteur.dateDeNaissance}</li>
+    </ul>
+
+    <form action="" method="post">
+        <h2>Ajouter un pret</h2>
+        <label for="livreID">ID du livre</label>
+        <input type="number" id="livreID" name="LIVRE_ID">
+        <input type="submit" value="Ajouter">
+    </form>
 </main>
 </body>
 </html>
