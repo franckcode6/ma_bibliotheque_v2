@@ -1,5 +1,6 @@
 package fr.franck.ma_bibliotheque_v2.controller;
 
+import fr.franck.ma_bibliotheque_v2.business.Lecteur;
 import fr.franck.ma_bibliotheque_v2.service.LecteurService;
 import fr.franck.ma_bibliotheque_v2.service.LivreService;
 import fr.franck.ma_bibliotheque_v2.service.PretService;
@@ -20,7 +21,7 @@ public class PretController {
     private final LivreService livreService;
     private final PretService pretService;
 
-    private final HttpSession httpSession;
+    private static Long lecteurId;
 
     @GetMapping("pret")
     public ModelAndView pretGet() {
@@ -31,20 +32,12 @@ public class PretController {
         return mav;
     }
 
-    @PostMapping("pret")
-    public ModelAndView pretPost(@RequestParam(name = "id") Long id) {
-        httpSession.setAttribute("lecteurId", id);
-
-        return new ModelAndView("redirect:/pret/lecteur");
-    }
-
     @GetMapping("pret/lecteur")
-    public ModelAndView pretUtilisateurGet() {
+    public ModelAndView pretUtilisateurGet(@RequestParam(name = "id") Long id) {
         ModelAndView mav = new ModelAndView();
 
+        mav.addObject("lecteur", lecteurService.recupererLecteur(id));
         mav.setViewName("pretLecteur");
-
-        httpSession.getAttribute("lecteurId");
 
         return mav;
     }
