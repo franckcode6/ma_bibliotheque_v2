@@ -10,13 +10,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @AllArgsConstructor
 public class PretController {
 
-    final LecteurService lecteurService;
-    final LivreService livreService;
-    final PretService pretService;
+    private final LecteurService lecteurService;
+    private final LivreService livreService;
+    private final PretService pretService;
+
+    private final HttpSession httpSession;
 
     @GetMapping("pret")
     public ModelAndView pretGet() {
@@ -29,6 +33,19 @@ public class PretController {
 
     @PostMapping("pret")
     public ModelAndView pretPost(@RequestParam(name = "id") Long id) {
-        return new ModelAndView("redirect:/pret/utilisateur");
+        httpSession.setAttribute("lecteurId", id);
+
+        return new ModelAndView("redirect:/pret/lecteur");
+    }
+
+    @GetMapping("pret/lecteur")
+    public ModelAndView pretUtilisateurGet() {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("pretLecteur");
+
+        httpSession.getAttribute("lecteurId");
+
+        return mav;
     }
 }
