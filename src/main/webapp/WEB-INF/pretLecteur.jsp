@@ -19,7 +19,7 @@
     <div class="container d-flex align-items-center justify-content-between">
         <h1><a href="/livres">Ma bibliothèque</a></h1>
         <nav class="d-flex justify-content-between">
-            <a href="pret" class="lien">Pret</a>
+            <a href="/pret" class="lien">Pret</a>
             <a href="#" class="lien ms-3">Se connecter</a>
         </nav>
     </div>
@@ -61,11 +61,11 @@
                 </tbody>
             </table>
         </div>
-
     </section>
 
     <section class="my-5 row">
         <div class="col-md-4"></div>
+        
         <div class="col-md-8">
             <h2>Nouveau pret</h2>
             <form method="post" class="mt-2">
