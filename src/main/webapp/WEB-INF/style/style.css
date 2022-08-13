@@ -34,7 +34,7 @@ li {
   margin: 0 10px;
 }
 
-section {
+section .card {
   border : 20px solid lightblue;
   border-radius: 20px;
   padding: 50px 0;

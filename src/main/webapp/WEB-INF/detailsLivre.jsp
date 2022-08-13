@@ -26,7 +26,7 @@
 </header>
 <h1><a href="/livres">Ma bibliothèque</a></h1>
 <main class="container">
-    <section class="text-center">
+    <section class="text-center card">
         <h2>${livre.id} - ${livre.titre} (${livre.type.nom})</h2>
         <h3>Auteur.ice : ${livre.auteur.prenom} ${livre.auteur.nom} (${livre.auteur.nationalite})</h3>
         <ul>

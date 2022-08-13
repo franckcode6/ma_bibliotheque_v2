@@ -51,7 +51,7 @@ public class PretController {
         return mav;
     }
 
-    @PostMapping("pret/ajout/lecteur")
+    @PostMapping("pret/lecteur")
     public ModelAndView pretLecteurPost(@RequestParam(name = "id") Long id,
                                         @RequestParam(name = "LIVRE1_ID") Long livre1Id,
                                         @RequestParam(name = "LIVRE2_ID", required = false) Long livre2Id,
