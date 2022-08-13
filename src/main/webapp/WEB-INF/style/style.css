@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Arima:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap");
 
+.cadre {
+  border : 20px solid lightblue;
+  border-radius: 20px;
+  padding: 50px 0;
+}
+
 .lien {
   font-family: "Arima", cursive;
 }
@@ -32,12 +38,6 @@ header::after {
 li {
   list-style-type: none;
   margin: 0 10px;
-}
-
-section .card {
-  border : 20px solid lightblue;
-  border-radius: 20px;
-  padding: 50px 0;
 }
 
 section ul {

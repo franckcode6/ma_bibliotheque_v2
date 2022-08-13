@@ -41,16 +41,6 @@ public class PretController {
         return mav;
     }
 
-    @GetMapping("pret/ajout/lecteur")
-    public ModelAndView pretLecteurAjoutGet(@RequestParam(name = "id") Long id) {
-        ModelAndView mav = new ModelAndView();
-
-        mav.addObject("lecteur", lecteurService.recupererLecteur(id));
-        mav.setViewName("pretLecteurAjout");
-
-        return mav;
-    }
-
     @PostMapping("pret/lecteur")
     public ModelAndView pretLecteurPost(@RequestParam(name = "id") Long id,
                                         @RequestParam(name = "LIVRE1_ID") Long livre1Id,
