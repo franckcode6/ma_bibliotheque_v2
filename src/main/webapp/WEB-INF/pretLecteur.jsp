@@ -34,7 +34,7 @@
                 <li>Né le : ${lecteur.dateDeNaissance}</li>
             </ul>
             <a href="/pret/ajout/lecteur?id=${lecteur.id}">
-                <button class="btn btn-secondary">Retour</button>
+                <button class="btn btn-secondary mt-2">Enregistrer un retour</button>
             </a>
         </div>
 
@@ -64,31 +64,34 @@
 
     </section>
 
-    <section class="mt-5">
-        <h2>Nouveau pret</h2>
-        <form method="post">
-            <div class="mb-3">
-                <label for="livre1Id" class="form-label">ID du livre 1</label>
-                <input type="number" id="livre1Id" name="LIVRE1_ID" class="form-control">
-            </div>
+    <section class="my-5 row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <h2>Nouveau pret</h2>
+            <form method="post" class="mt-2">
+                <div class="mb-3">
+                    <label for="livre1Id" class="form-label">ID du livre 1</label>
+                    <input type="number" id="livre1Id" name="LIVRE1_ID" class="form-control">
+                </div>
 
-            <div class="mb-3">
-                <label for="livre2Id" class="form-label">ID du livre 2</label>
-                <input type="number" id="livre2Id" name="LIVRE2_ID" class="form-control">
-            </div>
+                <div class="mb-3">
+                    <label for="livre2Id" class="form-label">ID du livre 2 (optionnel)</label>
+                    <input type="number" id="livre2Id" name="LIVRE2_ID" class="form-control">
+                </div>
 
-            <div class="mb-3">
-                <label for="livre3Id" class="form-label">ID du livre 3</label>
-                <input type="number" id="livre3Id" name="LIVRE3_ID" class="form-control">
-            </div>
+                <div class="mb-3">
+                    <label for="livre3Id" class="form-label">ID du livre 3 (optionnel)</label>
+                    <input type="number" id="livre3Id" name="LIVRE3_ID" class="form-control">
+                </div>
 
-            <div class="mb-3">
-                <label for="livre4Id" class="form-label">ID du livre 4</label>
-                <input type="number" id="livre4Id" name="LIVRE4_ID" class="form-control">
-            </div>
+                <div class="mb-3">
+                    <label for="livre4Id" class="form-label">ID du livre 4 (optionnel)</label>
+                    <input type="number" id="livre4Id" name="LIVRE4_ID" class="form-control">
+                </div>
 
-            <input type="submit" value="Ajouter" class="btn btn-success">
-        </form>
+                <input type="submit" value="Ajouter" class="btn btn-success">
+            </form>
+        </div>
     </section>
 </main>
 </body>
