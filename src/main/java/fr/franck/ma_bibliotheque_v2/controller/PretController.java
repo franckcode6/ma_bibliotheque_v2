@@ -51,7 +51,7 @@ public class PretController {
                                         @RequestParam(name = "LIVRE3_ID", required = false) Long livre3Id,
                                         @RequestParam(name = "LIVRE4_ID", required = false) Long livre4Id) {
         Lecteur lecteur = lecteurService.recupererLecteur(id);
-        
+
         Livre livre1 = livreService.recupererLivre(livre1Id);
         livre1.setEstDisponible(false);
         pretService.ajouterPret(lecteur, livre1);
