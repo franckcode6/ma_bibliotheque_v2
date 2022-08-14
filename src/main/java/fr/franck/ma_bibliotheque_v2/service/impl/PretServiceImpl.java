@@ -25,4 +25,14 @@ public class PretServiceImpl implements PretService {
     public List<Pret> recupererPrets(Long id) {
         return pretDao.findAllByUtilisateurId(id);
     }
+
+    @Override
+    public Pret recupererPret(Long id) {
+        return pretDao.findById(id).orElse(null);
+    }
+
+    @Override
+    public void supprimerPret(Pret pret) {
+        pretDao.delete(pret);
+    }
 }

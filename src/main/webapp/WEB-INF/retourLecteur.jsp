@@ -30,7 +30,7 @@
         <ul>
             <c:forEach items="${prets}" var="pret">
                 <li>
-                    <input type="checkbox" name="PRET_ID" id="pretId">
+                    <input type="checkbox" name="PRET_ID" id="pretId" value="${pret.id}">
                     <label for="pretId">${pret.livre.id} - ${pret.livre.titre} (Date retour : ${pret.dateFin})</label>
                 </li>
             </c:forEach>

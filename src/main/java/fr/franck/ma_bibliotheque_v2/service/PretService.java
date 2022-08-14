@@ -11,4 +11,9 @@ public interface PretService {
     void ajouterPret(Utilisateur utilisateur, Livre livre);
 
     List<Pret> recupererPrets(Long id);
+
+    Pret recupererPret(Long id);
+
+    void supprimerPret(Pret pret);
+
 }

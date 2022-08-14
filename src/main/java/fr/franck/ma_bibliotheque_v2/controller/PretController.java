@@ -2,6 +2,7 @@ package fr.franck.ma_bibliotheque_v2.controller;
 
 import fr.franck.ma_bibliotheque_v2.business.Lecteur;
 import fr.franck.ma_bibliotheque_v2.business.Livre;
+import fr.franck.ma_bibliotheque_v2.business.Pret;
 import fr.franck.ma_bibliotheque_v2.service.LecteurService;
 import fr.franck.ma_bibliotheque_v2.service.LivreService;
 import fr.franck.ma_bibliotheque_v2.service.PretService;
@@ -75,6 +76,19 @@ public class PretController {
         mav.setViewName("retourLecteur");
 
         return mav;
+    }
+
+    @PostMapping("retour/lecteur")
+    public ModelAndView retourLecteurPost(@RequestParam(name = "PRET_ID", required = false) Long id) {
+
+        if (id != null) {
+            Pret pret = pretService.recupererPret(id);
+            pret.getLivre().setEstDisponible(true);
+
+            pretService.supprimerPret(pret);
+        }
+
+        return new ModelAndView("redirect:/pret");
     }
 
 }
