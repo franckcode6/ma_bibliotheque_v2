@@ -33,7 +33,7 @@
                 <li>Email : ${lecteur.email}</li>
                 <li>Né le : ${lecteur.dateDeNaissance}</li>
             </ul>
-            <a href="/pret/ajout/lecteur?id=${lecteur.id}">
+            <a href="/retour/lecteur?id=${lecteur.id}">
                 <button class="btn btn-secondary mt-2">Enregistrer un retour</button>
             </a>
         </div>

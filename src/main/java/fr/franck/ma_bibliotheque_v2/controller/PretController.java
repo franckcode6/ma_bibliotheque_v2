@@ -66,4 +66,15 @@ public class PretController {
         return new ModelAndView("redirect:/pret");
     }
 
+    @GetMapping("retour/lecteur")
+    public ModelAndView retourLecteurGet(@RequestParam(name = "id") Long id) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.addObject("prets", pretService.recupererPrets(id));
+
+        mav.setViewName("retourLecteur");
+
+        return mav;
+    }
+
 }
