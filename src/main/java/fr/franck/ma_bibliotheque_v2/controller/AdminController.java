@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -29,5 +30,13 @@ public class AdminController {
         mav.addObject("pageDeLecteurs", lecteurService.recupererLecteurs(pageable));
 
         return mav;
+    }
+
+    @GetMapping("admin/lecteur/supprimer")
+    public ModelAndView supprimerLecteurGet(@RequestParam(name = "id", required = true) Long id) {
+
+        lecteurService.supprimerLecteur(id);
+
+        return new ModelAndView("redirect:/admin/lecteurs");
     }
 }

@@ -25,4 +25,9 @@ public class LecteurServiceImpl implements LecteurService {
     public Page<Lecteur> recupererLecteurs(Pageable pageable) {
         return lecteurDao.findAll(pageable);
     }
+
+    @Override
+    public void supprimerLecteur(Long id) {
+        lecteurDao.deleteById(id);
+    }
 }

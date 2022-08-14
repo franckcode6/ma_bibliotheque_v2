@@ -51,9 +51,7 @@
                 <td>${lecteur.email}</td>
                 <td>${lecteur.dateDeNaissance}</td>
                 <td>
-                    <a href="#">
-                        <button class="btn btn-danger">Supprimer</button>
-                    </a>
+                    <a href="/admin/lecteur/supprimer?id=${lecteur.id}" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
         </c:forEach>

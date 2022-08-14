@@ -10,4 +10,6 @@ public interface LecteurService {
     Lecteur recupererLecteur(Long id);
 
     Page<Lecteur> recupererLecteurs(Pageable pageable);
+
+    void supprimerLecteur(Long id);
 }
