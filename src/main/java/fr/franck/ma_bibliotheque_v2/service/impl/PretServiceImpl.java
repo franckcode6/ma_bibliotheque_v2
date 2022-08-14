@@ -27,6 +27,11 @@ public class PretServiceImpl implements PretService {
     }
 
     @Override
+    public List<Pret> recupererPrets(List<Long> ids) {
+        return pretDao.findAllById(ids);
+    }
+
+    @Override
     public Pret recupererPret(Long id) {
         return pretDao.findById(id).orElse(null);
     }

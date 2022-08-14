@@ -12,6 +12,8 @@ public interface PretService {
 
     List<Pret> recupererPrets(Long id);
 
+    List<Pret> recupererPrets(List<Long> ids);
+
     Pret recupererPret(Long id);
 
     void supprimerPret(Pret pret);

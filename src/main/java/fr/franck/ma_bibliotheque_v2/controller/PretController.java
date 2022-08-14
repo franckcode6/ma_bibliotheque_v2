@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 @AllArgsConstructor
 public class PretController {
@@ -49,20 +51,28 @@ public class PretController {
                                         @RequestParam(name = "LIVRE3_ID", required = false) Long livre3Id,
                                         @RequestParam(name = "LIVRE4_ID", required = false) Long livre4Id) {
         Lecteur lecteur = lecteurService.recupererLecteur(id);
+        
         Livre livre1 = livreService.recupererLivre(livre1Id);
-        Livre livre2 = livreService.recupererLivre(livre2Id);
-        Livre livre3 = livreService.recupererLivre(livre3Id);
-        Livre livre4 = livreService.recupererLivre(livre4Id);
-
         livre1.setEstDisponible(false);
-        livre2.setEstDisponible(false);
-        livre3.setEstDisponible(false);
-        livre4.setEstDisponible(false);
-
         pretService.ajouterPret(lecteur, livre1);
-        pretService.ajouterPret(lecteur, livre2);
-        pretService.ajouterPret(lecteur, livre3);
-        pretService.ajouterPret(lecteur, livre4);
+
+        if (livre2Id != null) {
+            Livre livre2 = livreService.recupererLivre(livre2Id);
+            livre2.setEstDisponible(false);
+            pretService.ajouterPret(lecteur, livre2);
+        }
+
+        if (livre3Id != null) {
+            Livre livre3 = livreService.recupererLivre(livre3Id);
+            livre3.setEstDisponible(false);
+            pretService.ajouterPret(lecteur, livre3);
+        }
+
+        if (livre4Id != null) {
+            Livre livre4 = livreService.recupererLivre(livre4Id);
+            livre4.setEstDisponible(false);
+            pretService.ajouterPret(lecteur, livre4);
+        }
 
         return new ModelAndView("redirect:/pret");
     }
@@ -79,13 +89,18 @@ public class PretController {
     }
 
     @PostMapping("retour/lecteur")
-    public ModelAndView retourLecteurPost(@RequestParam(name = "PRET_ID", required = false) Long id) {
+    public ModelAndView retourLecteurPost(@RequestParam(name = "PRET_ID", required = false) List<Long> ids) {
 
-        if (id != null) {
-            Pret pret = pretService.recupererPret(id);
-            pret.getLivre().setEstDisponible(true);
+        List<Pret> prets = pretService.recupererPrets(ids);
+        System.out.println(prets);
 
-            pretService.supprimerPret(pret);
+        for (Pret pret : prets) {
+
+            if (pret.getId() != null) {
+                pret.getLivre().setEstDisponible(true);
+
+                pretService.supprimerPret(pret);
+            }
         }
 
         return new ModelAndView("redirect:/pret");
