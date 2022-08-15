@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -47,6 +48,15 @@ public class AdminController {
 
         mav.setViewName("listeDesAuteurs");
         mav.addObject("pageDAuteurs", auteurService.recupererAuteurs(pageable));
+
+        return mav;
+    }
+
+    @GetMapping("admin/auteurs/ajouter")
+    public ModelAndView auteursAjouterGet() {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("auteurAjout");
 
         return mav;
     }
