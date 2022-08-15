@@ -48,7 +48,8 @@
             <input type="text" id="nationalite" name="NATIONALITE" class="form-control">
         </div>
 
-        <input type="submit" value="Ajouter" class="btn btn-success">
+        <input type="submit" value="Ajouter" class="btn btn-success me-2">
+        <a href="/admin/auteurs" class="btn btn-secondary">Retour à la liste</a>
     </form>
 
 </main>
