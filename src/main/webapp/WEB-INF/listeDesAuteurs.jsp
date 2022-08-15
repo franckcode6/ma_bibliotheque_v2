@@ -26,7 +26,10 @@
 </header>
 
 <main class="container">
-    <h2>Liste des auteurs</h2>
+    <div class="d-flex justify-content-between align-items-center mb-3 pe-5">
+        <h2>Liste des auteurs</h2>
+        <a href="/admin/auteurs/ajouter" class="btn btn-success">Nouvel auteur</a>
+    </div>
 
     <table class="mx-auto table table-hover">
         <thead class="table-info">
@@ -46,8 +49,8 @@
                 <th>${auteur.id}</th>
                 <td>${auteur.nom}</td>
                 <td>${auteur.prenom}</td>
-                <td>${auteur.nationalite}</td>
                 <td>${auteur.dateDeNaissance}</td>
+                <td>${auteur.nationalite}</td>
                 <td>
                     <a href="/admin/auteur/supprimer?id=${auteur.id}" class="btn btn-danger">Supprimer</a>
                 </td>
