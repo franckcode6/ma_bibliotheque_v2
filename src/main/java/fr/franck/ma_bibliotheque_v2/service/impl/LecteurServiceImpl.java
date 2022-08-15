@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -24,6 +25,11 @@ public class LecteurServiceImpl implements LecteurService {
     @Override
     public Page<Lecteur> recupererLecteurs(Pageable pageable) {
         return lecteurDao.findAll(pageable);
+    }
+
+    @Override
+    public void ajouterLecteur(String nom, String prenom, String email, String mdp, LocalDate date) {
+        lecteurDao.save(new Lecteur(nom, prenom, email, mdp, date));
     }
 
     @Override

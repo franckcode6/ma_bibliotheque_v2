@@ -44,6 +44,20 @@ public class AdminController {
         return mav;
     }
 
+    @PostMapping("admin/lecteurs/ajouter")
+    public ModelAndView lecteursAjouterPost(@RequestParam(name = "NOM") String nom,
+                                           @RequestParam(name = "PRENOM") String prenom,
+                                           @RequestParam(name = "EMAIL") String email,
+                                           @RequestParam(name = "MDP") String mdp,
+                                           @RequestParam(name = "DATE_NAISSANCE") String dateDeNaissance) {
+
+        LocalDate date = LocalDate.parse(dateDeNaissance);
+
+        lecteurService.ajouterLecteur(nom, prenom, email, mdp, date);
+
+        return new ModelAndView("redirect:/admin/lecteurs");
+    }
+
     @GetMapping("admin/lecteur/supprimer")
     public ModelAndView supprimerLecteurGet(@RequestParam(name = "id", required = true) Long id) {
 
