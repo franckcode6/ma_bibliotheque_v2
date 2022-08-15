@@ -39,15 +39,15 @@
         </div>
 
         <div class="mb-3">
+            <label for="dateNaissance" class="form-label">Date de naissance</label>
+            <input type="date" id="dateNaissance" name="DATE_NAISSANCE" class="form-control">
+        </div>
+
+        <div class="mb-3">
             <label for="nationalite" class="form-label">Nationalité</label>
             <input type="text" id="nationalite" name="NATIONALITE" class="form-control">
         </div>
 
-        <div class="mb-3">
-            <label for="dateNaissance" class="form-label">Date de naissance</label>
-            <input type="date" id="dateNaissance" name="DATE_NAISSANCE" class="form-control">
-        </div>
-                
         <input type="submit" value="Ajouter" class="btn btn-success">
     </form>
 

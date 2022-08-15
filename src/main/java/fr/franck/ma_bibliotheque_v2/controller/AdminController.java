@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.time.LocalDate;
+
 @Controller
 @AllArgsConstructor
 public class AdminController {
@@ -59,6 +61,19 @@ public class AdminController {
         mav.setViewName("auteurAjout");
 
         return mav;
+    }
+
+    @PostMapping("admin/auteurs/ajouter")
+    public ModelAndView auteursAjouterPost(@RequestParam(name = "NOM") String nom,
+                                           @RequestParam(name = "PRENOM") String prenom,
+                                           @RequestParam(name = "DATE_NAISSANCE") String dateDeNaissance,
+                                           @RequestParam(name = "NATIONALITE") String nationalite) {
+
+        LocalDate date = LocalDate.parse(dateDeNaissance);
+
+        auteurService.ajouterAuteur(nom, prenom, date, nationalite);
+
+        return new ModelAndView("redirect:/admin/auteurs");
     }
 
     @GetMapping("admin/auteur/supprimer")
