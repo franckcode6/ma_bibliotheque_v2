@@ -81,6 +81,22 @@ public class AdminController {
         return mav;
     }
 
+    @PostMapping("admin/livres/ajouter")
+    public ModelAndView livresAjouterPost(@RequestParam(name = "TITRE") String titre,
+                                           @RequestParam(name = "ISBN") String isbn,
+                                           @RequestParam(name = "DATE_PARUTION") String dateDeParution,
+                                           @RequestParam(name = "AUTEUR_ID") Long auteurID,
+                                          @RequestParam(name = "EDITEUR_ID") Long editeurId,
+                                          @RequestParam(name = "CATEGORIE_ID") Long categorieId,
+                                          @RequestParam(name = "TYPE_ID") Long typeId) {
+
+        LocalDate date = LocalDate.parse(dateDeNaissance);
+
+        auteurService.ajouterAuteur(nom, prenom, date, nationalite);
+
+        return new ModelAndView("redirect:/livres");
+    }
+
     @GetMapping("admin/auteurs")
     public ModelAndView auteursGet(@PageableDefault(size = NB_ELEMENTS_PAR_PAGE)
                                    Pageable pageable) {

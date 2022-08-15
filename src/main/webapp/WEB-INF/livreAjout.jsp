@@ -63,7 +63,7 @@
 
         <div class="mb-3">
             <label for="categorie" class="form-label">Categorie</label>
-            <select id="categorie" name="AUTEUR_ID" class="form-select">
+            <select id="categorie" name="CATEGORIE_ID" class="form-select">
                 <c:forEach items="${categories}" var="categorie">
                     <option value="${categorie.id}">${categorie.nom}</option>
                 </c:forEach>
@@ -72,7 +72,7 @@
 
         <div class="mb-3">
             <label for="type" class="form-label">Type</label>
-            <select id="type" name="AUTEUR_ID" class="form-select">
+            <select id="type" name="TYPE_ID" class="form-select">
                 <c:forEach items="${types}" var="type">
                     <option value="${type.id}">${type.nom}</option>
                 </c:forEach>
