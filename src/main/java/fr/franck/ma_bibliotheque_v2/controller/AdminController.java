@@ -19,10 +19,12 @@ public class AdminController {
     private final static int NB_ELEMENTS_PAR_PAGE = 20;
 
     private final AuteurService auteurService;
+    private final CategorieService categorieService;
     private final EditeurService editeurService;
     private final LecteurService lecteurService;
     private final LivreService livreService;
     private final PretService pretService;
+    private final TypeService typeService;
 
     @GetMapping("admin/lecteurs")
     public ModelAndView lecteursGet(@PageableDefault(size = NB_ELEMENTS_PAR_PAGE)
@@ -64,6 +66,19 @@ public class AdminController {
         lecteurService.supprimerLecteur(id);
 
         return new ModelAndView("redirect:/admin/lecteurs");
+    }
+
+    @GetMapping("admin/livres/ajouter")
+    public ModelAndView livresAjouterGet() {
+        ModelAndView mav = new ModelAndView();
+
+        mav.addObject("auteurs", auteurService.recupererAuteurs());
+        mav.addObject("editeurs", editeurService.recupererEditeurs());
+        mav.addObject("categories", categorieService.recupererCategories());
+        mav.addObject("types", typeService.recupererTypes());
+        mav.setViewName("livreAjout");
+
+        return mav;
     }
 
     @GetMapping("admin/auteurs")

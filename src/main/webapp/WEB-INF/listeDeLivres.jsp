@@ -26,7 +26,10 @@
 </header>
 
 <main class="container">
-    <h2>Liste des livres</h2>
+    <div class="d-flex justify-content-between align-items-center mb-3 pe-5">
+        <h2>Liste des livres</h2>
+        <a href="/admin/livres/ajouter" class="btn btn-success">Nouveau livre</a>
+    </div>
 
     <table class="mx-auto table table-hover">
         <thead class="table-info">

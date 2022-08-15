@@ -8,11 +8,18 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class EditeurServiceImpl implements EditeurService {
 
     private final EditeurDao editeurDao;
+
+    @Override
+    public List<Editeur> recupererEditeurs() {
+        return editeurDao.findAll();
+    }
 
     @Override
     public Page<Editeur> recupererEditeurs(Pageable pageable) {

@@ -9,12 +9,18 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class AuteurServiceImpl implements AuteurService {
 
     private final AuteurDao auteurDao;
+
+    @Override
+    public List<Auteur> recupererAuteurs() {
+        return auteurDao.findAll();
+    }
 
     @Override
     public Page<Auteur> recupererAuteurs(Pageable pageable) {
