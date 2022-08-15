@@ -1,9 +1,6 @@
 package fr.franck.ma_bibliotheque_v2.controller;
 
-import fr.franck.ma_bibliotheque_v2.service.AuteurService;
-import fr.franck.ma_bibliotheque_v2.service.LecteurService;
-import fr.franck.ma_bibliotheque_v2.service.LivreService;
-import fr.franck.ma_bibliotheque_v2.service.PretService;
+import fr.franck.ma_bibliotheque_v2.service.*;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -16,16 +13,16 @@ import org.springframework.web.servlet.ModelAndView;
 @AllArgsConstructor
 public class AdminController {
 
-    private final static int NB_AUTEURS_PAR_PAGE = 20;
-    private final static int NB_LECTEURS_PAR_PAGE = 20;
+    private final static int NB_ELEMENTS_PAR_PAGE = 20;
 
     private final AuteurService auteurService;
+    private final EditeurService editeurService;
     private final LecteurService lecteurService;
     private final LivreService livreService;
     private final PretService pretService;
 
     @GetMapping("admin/lecteurs")
-    public ModelAndView lecteursGet(@PageableDefault(size = NB_LECTEURS_PAR_PAGE)
+    public ModelAndView lecteursGet(@PageableDefault(size = NB_ELEMENTS_PAR_PAGE)
                                     Pageable pageable) {
         ModelAndView mav = new ModelAndView();
 
@@ -44,7 +41,7 @@ public class AdminController {
     }
 
     @GetMapping("admin/auteurs")
-    public ModelAndView auteursGet(@PageableDefault(size = NB_AUTEURS_PAR_PAGE)
+    public ModelAndView auteursGet(@PageableDefault(size = NB_ELEMENTS_PAR_PAGE)
                                    Pageable pageable) {
         ModelAndView mav = new ModelAndView();
 
@@ -52,5 +49,32 @@ public class AdminController {
         mav.addObject("pageDAuteurs", auteurService.recupererAuteurs(pageable));
 
         return mav;
+    }
+
+    @GetMapping("admin/auteur/supprimer")
+    public ModelAndView supprimerAuteurGet(@RequestParam(name = "id", required = true) Long id) {
+
+        auteurService.supprimerAuteur(id);
+
+        return new ModelAndView("redirect:/admin/auteurs");
+    }
+
+    @GetMapping("admin/editeurs")
+    public ModelAndView editeursGet(@PageableDefault(size = NB_ELEMENTS_PAR_PAGE)
+                                    Pageable pageable) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("listeDesEditeurs");
+        mav.addObject("pageDEditeurs", editeurService.recupererEditeurs(pageable));
+
+        return mav;
+    }
+
+    @GetMapping("admin/editeur/supprimer")
+    public ModelAndView supprimerEditeurGet(@RequestParam(name = "id", required = true) Long id) {
+
+        editeurService.supprimerEditeur(id);
+
+        return new ModelAndView("redirect:/admin/editeurs");
     }
 }

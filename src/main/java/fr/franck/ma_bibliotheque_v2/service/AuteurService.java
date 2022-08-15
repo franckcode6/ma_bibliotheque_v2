@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface AuteurService {
     Page<Auteur> recupererAuteurs(Pageable pageable);
+
+    void supprimerAuteur(Long id);
 }

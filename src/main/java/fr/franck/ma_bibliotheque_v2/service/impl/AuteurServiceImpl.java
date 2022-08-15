@@ -20,4 +20,9 @@ public class AuteurServiceImpl implements AuteurService {
     public Page<Auteur> recupererAuteurs(Pageable pageable) {
         return auteurDao.findAll(pageable);
     }
+
+    @Override
+    public void supprimerAuteur(Long id) {
+        auteurDao.deleteById(id);
+    }
 }

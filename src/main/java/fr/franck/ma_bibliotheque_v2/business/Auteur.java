@@ -32,7 +32,7 @@ public class Auteur {
     @NotBlank
     private String nationalite;
 
-    @OneToMany(mappedBy = "auteur")
+    @OneToMany(mappedBy = "auteur", cascade = CascadeType.REMOVE)
     private List<Livre> livres;
 
     public Auteur(String nom,
