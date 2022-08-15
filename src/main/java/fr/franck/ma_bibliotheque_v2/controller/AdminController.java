@@ -95,6 +95,7 @@ public class AdminController {
                                           @RequestParam(name = "TYPE_ID") Long typeId) {
 
         LocalDate date = LocalDate.parse(dateDeParution);
+
         Auteur auteur = auteurService.recupererAuteur(auteurID);
         Editeur editeur = editeurService.recupererEditeur(editeurId);
         Categorie categorie = categorieService.recupererCategorie(categorieId);

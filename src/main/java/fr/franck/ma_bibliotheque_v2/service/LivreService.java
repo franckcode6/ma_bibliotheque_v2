@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface LivreService {
+    List<Livre> recupererLivres();
+
     Page<Livre> recupererLivres(Pageable pageable);
 
     Livre recupererLivre(Long id);

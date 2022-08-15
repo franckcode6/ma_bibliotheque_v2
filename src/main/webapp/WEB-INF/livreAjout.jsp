@@ -46,6 +46,7 @@
         <div class="mb-3">
             <label for="auteur" class="form-label">Auteur</label>
             <select id="auteur" name="AUTEUR_ID" class="form-select">
+                <option>Selectionnez un auteur</option>
                 <c:forEach items="${auteurs}" var="auteur">
                     <option value="${auteur.id}">${auteur.nom} ${auteur.prenom}</option>
                 </c:forEach>
@@ -55,6 +56,7 @@
         <div class="mb-3">
             <label for="editeur" class="form-label">Editeur</label>
             <select id="editeur" name="EDITEUR_ID" class="form-select">
+                <option>Selectionnez un editeur</option>
                 <c:forEach items="${editeurs}" var="editeur">
                     <option value="${editeur.id}">${editeur.nom}</option>
                 </c:forEach>
@@ -64,6 +66,7 @@
         <div class="mb-3">
             <label for="categorie" class="form-label">Categorie</label>
             <select id="categorie" name="CATEGORIE_ID" class="form-select">
+                <option>Selectionnez une categorie</option>
                 <c:forEach items="${categories}" var="categorie">
                     <option value="${categorie.id}">${categorie.nom}</option>
                 </c:forEach>
@@ -73,6 +76,7 @@
         <div class="mb-3">
             <label for="type" class="form-label">Type</label>
             <select id="type" name="TYPE_ID" class="form-select">
+                <option>Selectionnez un type</option>
                 <c:forEach items="${types}" var="type">
                     <option value="${type.id}">${type.nom}</option>
                 </c:forEach>

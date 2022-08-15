@@ -140,8 +140,8 @@ public class AjoutDonneesInitiales implements CommandLineRunner {
                         "978-" + random.nextInt(1, 9) + "-" + random.nextInt(1000, 9999) + "-" + random.nextInt(1000, 9999) + "-" + random.nextInt(1, 9),
                         faker.date().birthday().toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
                         auteurs.get(random.nextInt(auteurs.size())),
-                        categories.get(random.nextInt(categories.size())),
                         editeurs.get(random.nextInt(editeurs.size())),
+                        categories.get(random.nextInt(categories.size())),
                         types.get(random.nextInt(types.size()))));
             }
             livreDao.saveAll(livres);

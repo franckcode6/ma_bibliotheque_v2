@@ -17,6 +17,11 @@ public class EditeurServiceImpl implements EditeurService {
     private final EditeurDao editeurDao;
 
     @Override
+    public Editeur recupererEditeur(Long id) {
+        return editeurDao.findById(id).orElse(null);
+    }
+
+    @Override
     public List<Editeur> recupererEditeurs() {
         return editeurDao.findAll();
     }

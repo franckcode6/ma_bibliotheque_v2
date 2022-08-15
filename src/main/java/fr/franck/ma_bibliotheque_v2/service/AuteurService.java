@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface AuteurService {
+    Auteur recupererAuteur(Long id);
+
     List<Auteur> recupererAuteurs();
 
     Page<Auteur> recupererAuteurs(Pageable pageable);

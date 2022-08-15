@@ -14,6 +14,11 @@ public class TypeServiceImpl implements TypeService {
     private final TypeDao typeDao;
 
     @Override
+    public Type recupererType(Long id) {
+        return typeDao.findById(id).orElse(null);
+    }
+
+    @Override
     public List<Type> recupererTypes() {
         return typeDao.findAll();
     }

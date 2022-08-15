@@ -14,6 +14,11 @@ public class CategorieServiceImpl implements CategorieService {
     private final CategorieDao categorieDao;
 
     @Override
+    public Categorie recupererCategorie(Long id) {
+        return categorieDao.findById(id).orElse(null);
+    }
+
+    @Override
     public List<Categorie> recupererCategories() {
         return categorieDao.findAll();
     }
