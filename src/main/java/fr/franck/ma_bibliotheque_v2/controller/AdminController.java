@@ -104,6 +104,14 @@ public class AdminController {
         return mav;
     }
 
+    @PostMapping("admin/editeurs/ajouter")
+    public ModelAndView editeursAjouterPost(@RequestParam(name = "NOM") String nom) {
+
+        editeurService.ajouterEditeur(nom);
+
+        return new ModelAndView("redirect:/admin/editeurs");
+    }
+
     @GetMapping("admin/editeur/supprimer")
     public ModelAndView supprimerEditeurGet(@RequestParam(name = "id", required = true) Long id) {
 

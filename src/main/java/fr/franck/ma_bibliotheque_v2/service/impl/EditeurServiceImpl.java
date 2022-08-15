@@ -20,6 +20,11 @@ public class EditeurServiceImpl implements EditeurService {
     }
 
     @Override
+    public void ajouterEditeur(String nom) {
+        editeurDao.save(new Editeur(nom));
+    }
+
+    @Override
     public void supprimerEditeur(Long id) {
         editeurDao.deleteById(id);
     }

@@ -7,5 +7,7 @@ import org.springframework.data.domain.Pageable;
 public interface EditeurService {
     Page<Editeur> recupererEditeurs(Pageable pageable);
 
+    void ajouterEditeur(String nom);
+
     void supprimerEditeur(Long id);
 }
