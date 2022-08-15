@@ -49,14 +49,14 @@ public class Livre {
         this.estDisponible = true;
     }
 
-    public Livre(String titre, String isbn, LocalDate dateDeParution, Auteur auteur, Categorie categorie, Editeur editeur, Type type) {
+    public Livre(String titre, String isbn, LocalDate dateDeParution, Auteur auteur, Editeur editeur, Categorie categorie, Type type) {
         this();
         this.titre = titre;
         this.isbn = isbn;
         this.dateDeParution = dateDeParution;
         this.auteur = auteur;
-        this.categorie = categorie;
         this.editeur = editeur;
+        this.categorie = categorie;
         this.type = type;
     }
 }

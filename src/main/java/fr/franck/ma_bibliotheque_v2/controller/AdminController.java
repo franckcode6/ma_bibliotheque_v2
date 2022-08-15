@@ -1,5 +1,9 @@
 package fr.franck.ma_bibliotheque_v2.controller;
 
+import fr.franck.ma_bibliotheque_v2.business.Auteur;
+import fr.franck.ma_bibliotheque_v2.business.Categorie;
+import fr.franck.ma_bibliotheque_v2.business.Editeur;
+import fr.franck.ma_bibliotheque_v2.business.Type;
 import fr.franck.ma_bibliotheque_v2.service.*;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -48,10 +52,10 @@ public class AdminController {
 
     @PostMapping("admin/lecteurs/ajouter")
     public ModelAndView lecteursAjouterPost(@RequestParam(name = "NOM") String nom,
-                                           @RequestParam(name = "PRENOM") String prenom,
-                                           @RequestParam(name = "EMAIL") String email,
-                                           @RequestParam(name = "MDP") String mdp,
-                                           @RequestParam(name = "DATE_NAISSANCE") String dateDeNaissance) {
+                                            @RequestParam(name = "PRENOM") String prenom,
+                                            @RequestParam(name = "EMAIL") String email,
+                                            @RequestParam(name = "MDP") String mdp,
+                                            @RequestParam(name = "DATE_NAISSANCE") String dateDeNaissance) {
 
         LocalDate date = LocalDate.parse(dateDeNaissance);
 
@@ -83,16 +87,20 @@ public class AdminController {
 
     @PostMapping("admin/livres/ajouter")
     public ModelAndView livresAjouterPost(@RequestParam(name = "TITRE") String titre,
-                                           @RequestParam(name = "ISBN") String isbn,
-                                           @RequestParam(name = "DATE_PARUTION") String dateDeParution,
-                                           @RequestParam(name = "AUTEUR_ID") Long auteurID,
+                                          @RequestParam(name = "ISBN") String isbn,
+                                          @RequestParam(name = "DATE_PARUTION") String dateDeParution,
+                                          @RequestParam(name = "AUTEUR_ID") Long auteurID,
                                           @RequestParam(name = "EDITEUR_ID") Long editeurId,
                                           @RequestParam(name = "CATEGORIE_ID") Long categorieId,
                                           @RequestParam(name = "TYPE_ID") Long typeId) {
 
-        LocalDate date = LocalDate.parse(dateDeNaissance);
+        LocalDate date = LocalDate.parse(dateDeParution);
+        Auteur auteur = auteurService.recupererAuteur(auteurID);
+        Editeur editeur = editeurService.recupererEditeur(editeurId);
+        Categorie categorie = categorieService.recupererCategorie(categorieId);
+        Type type = typeService.recupererType(typeId);
 
-        auteurService.ajouterAuteur(nom, prenom, date, nationalite);
+        livreService.ajouterLivre(titre, isbn, date, auteur, editeur, categorie, type);
 
         return new ModelAndView("redirect:/livres");
     }

@@ -1,6 +1,6 @@
 package fr.franck.ma_bibliotheque_v2.service.impl;
 
-import fr.franck.ma_bibliotheque_v2.business.Livre;
+import fr.franck.ma_bibliotheque_v2.business.*;
 import fr.franck.ma_bibliotheque_v2.dao.LivreDao;
 import fr.franck.ma_bibliotheque_v2.service.LivreService;
 import lombok.AllArgsConstructor;
@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -30,5 +31,16 @@ public class LivreServiceImpl implements LivreService {
     public Livre recupererLivre(Long id) {
 
         return livreDao.findById(id).orElse(null);
+    }
+
+    @Override
+    public void ajouterLivre(String titre,
+                             String isbn,
+                             LocalDate dateDeParution,
+                             Auteur auteur,
+                             Editeur editeur,
+                             Categorie categorie,
+                             Type type) {
+        livreDao.save(new Livre(titre, isbn, dateDeParution, auteur, editeur, categorie, type));
     }
 }
