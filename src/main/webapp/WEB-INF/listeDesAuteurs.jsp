@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Liste des lecteurs</title>
+    <title>Auteurs</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <style>
@@ -26,7 +26,7 @@
 </header>
 
 <main class="container">
-    <h2>Liste des lecteurs</h2>
+    <h2>Liste des auteurs</h2>
 
     <table class="mx-auto table table-hover">
         <thead class="table-info">
@@ -34,22 +34,22 @@
             <th>ID</th>
             <th>Nom</th>
             <th>Prenom</th>
-            <th>Email</th>
             <th>Date de naissance</th>
+            <th>Nationalité</th>
             <th>Action</th>
         </tr>
         </thead>
 
         <tbody>
-        <c:forEach items="${pageDeLecteurs.content}" var="lecteur">
+        <c:forEach items="${pageDAuteurs.content}" var="auteur">
             <tr>
-                <th>${lecteur.id}</th>
-                <td>${lecteur.nom}</td>
-                <td>${lecteur.prenom}</td>
-                <td>${lecteur.email}</td>
-                <td>${lecteur.dateDeNaissance}</td>
+                <th>${auteur.id}</th>
+                <td>${auteur.nom}</td>
+                <td>${auteur.prenom}</td>
+                <td>${auteur.nationalite}</td>
+                <td>${auteur.dateDeNaissance}</td>
                 <td>
-                    <a href="/admin/lecteur/supprimer?id=${lecteur.id}" class="btn btn-danger">Supprimer</a>
+                    <a href="/admin/auteur/supprimer?id=${auteur.id}" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
         </c:forEach>
@@ -57,14 +57,14 @@
     </table>
 
     <h3 class="text-center mt-5">
-        <c:if test="${!pageDeLecteurs.first}">
-            <a href="lecteurs?page=0&sort=${sort}">&#x23EE;</a>
-            <a href="lecteurs?page=${pageDeLecteurs.number-1}&sort=${sort}">&#x23EA;</a>
+        <c:if test="${!pageDAuteurs.first}">
+            <a href="auteurs?page=0&sort=${sort}">&#x23EE;</a>
+            <a href="auteurs?page=${pageDAuteurs.number-1}&sort=${sort}">&#x23EA;</a>
         </c:if>
-        Page ${pageDeLecteurs.getNumber()+1}
-        <c:if test="${!pageDeLecteurs.last}">
-            <a href="lecteurs?page=${pageDeLecteurs.number+1}&sort=${sort}">&#x23E9;</a>
-            <a href="lecteurs?page=${pageDeLecteurs.totalPages - 1}&sort=${sort}">&#x23ED;</a>
+        Page ${pageDAuteurs.getNumber()+1}
+        <c:if test="${!pageDAuteurs.last}">
+            <a href="auteurs?page=${pageDAuteurs.number+1}&sort=${sort}">&#x23E9;</a>
+            <a href="auteurs?page=${pageDAuteurs.totalPages - 1}&sort=${sort}">&#x23ED;</a>
         </c:if>
     </h3>
 </main>

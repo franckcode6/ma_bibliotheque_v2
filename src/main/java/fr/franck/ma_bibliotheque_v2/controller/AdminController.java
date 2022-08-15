@@ -1,5 +1,6 @@
 package fr.franck.ma_bibliotheque_v2.controller;
 
+import fr.franck.ma_bibliotheque_v2.service.AuteurService;
 import fr.franck.ma_bibliotheque_v2.service.LecteurService;
 import fr.franck.ma_bibliotheque_v2.service.LivreService;
 import fr.franck.ma_bibliotheque_v2.service.PretService;
@@ -15,8 +16,10 @@ import org.springframework.web.servlet.ModelAndView;
 @AllArgsConstructor
 public class AdminController {
 
+    private final static int NB_AUTEURS_PAR_PAGE = 20;
     private final static int NB_LECTEURS_PAR_PAGE = 20;
 
+    private final AuteurService auteurService;
     private final LecteurService lecteurService;
     private final LivreService livreService;
     private final PretService pretService;
@@ -38,5 +41,16 @@ public class AdminController {
         lecteurService.supprimerLecteur(id);
 
         return new ModelAndView("redirect:/admin/lecteurs");
+    }
+
+    @GetMapping("admin/auteurs")
+    public ModelAndView auteursGet(@PageableDefault(size = NB_AUTEURS_PAR_PAGE)
+                                   Pageable pageable) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("listeDesAuteurs");
+        mav.addObject("pageDAuteurs", auteurService.recupererAuteurs(pageable));
+
+        return mav;
     }
 }
