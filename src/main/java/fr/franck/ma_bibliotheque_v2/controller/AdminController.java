@@ -35,6 +35,15 @@ public class AdminController {
         return mav;
     }
 
+    @GetMapping("admin/lecteurs/ajouter")
+    public ModelAndView lecteursAjouterGet() {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("lecteurAjout");
+
+        return mav;
+    }
+
     @GetMapping("admin/lecteur/supprimer")
     public ModelAndView supprimerLecteurGet(@RequestParam(name = "id", required = true) Long id) {
 
