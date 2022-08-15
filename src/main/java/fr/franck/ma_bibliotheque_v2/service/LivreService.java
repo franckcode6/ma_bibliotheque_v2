@@ -21,4 +21,6 @@ public interface LivreService {
                       Editeur editeur,
                       Categorie categorie,
                       Type type);
+
+    void supprimerLivre(Long id);
 }

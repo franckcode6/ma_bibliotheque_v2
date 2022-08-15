@@ -43,4 +43,9 @@ public class LivreServiceImpl implements LivreService {
                              Type type) {
         livreDao.save(new Livre(titre, isbn, dateDeParution, auteur, editeur, categorie, type));
     }
+
+    @Override
+    public void supprimerLivre(Long id) {
+        livreDao.deleteById(id);
+    }
 }

@@ -106,6 +106,14 @@ public class AdminController {
         return new ModelAndView("redirect:/livres");
     }
 
+    @GetMapping("admin/livres/supprimer")
+    public ModelAndView supprimerLivresGet(@RequestParam(name = "id", required = true) Long id) {
+
+        livreService.supprimerLivre(id);
+
+        return new ModelAndView("redirect:/livres");
+    }
+
     @GetMapping("admin/auteurs")
     public ModelAndView auteursGet(@PageableDefault(size = NB_ELEMENTS_PAR_PAGE)
                                    Pageable pageable) {

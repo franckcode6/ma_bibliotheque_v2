@@ -40,6 +40,9 @@
                     Emprunté
                 </c:if>
             </li>
+            <li class="mt-3">
+                <a href="/admin/livres/supprimer?id=${livre.id}" class="btn btn-danger">Supprimer</a>
+            </li>
         </ul>
     </section>
 </main>
