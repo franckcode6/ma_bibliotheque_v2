@@ -95,6 +95,15 @@ public class AdminController {
         return mav;
     }
 
+    @GetMapping("admin/editeurs/ajouter")
+    public ModelAndView editeursAjouterGet() {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("editeurAjout");
+
+        return mav;
+    }
+
     @GetMapping("admin/editeur/supprimer")
     public ModelAndView supprimerEditeurGet(@RequestParam(name = "id", required = true) Long id) {
 

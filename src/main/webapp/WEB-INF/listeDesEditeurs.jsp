@@ -25,7 +25,10 @@
     </div>
 </header>
 <main class="container">
-    <h2>Liste des editeurs</h2>
+    <div class="d-flex justify-content-between align-items-center mb-3 pe-5">
+        <h2>Liste des editeurs</h2>
+        <a href="/admin/editeurs/ajouter" class="btn btn-success">Nouvel editeur</a>
+    </div>
 
     <table class="mx-auto table table-hover">
         <thead class="table-info">
