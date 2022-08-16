@@ -24,7 +24,7 @@
             <a href="/connexion" class="lien">Se connecter</a>
             </c:if>
             <c:if test="${sessionScope.lecteurConnecte ne null}">
-            <a href="/compte" class="lien">Mon compte</a>
+            <a href="/compte" class="lien"><strong>${sessionScope.lecteurConnecte.prenom} ${sessionScope.lecteurConnecte.nom}</strong></a>
             </c:if>
             <c:if test="${sessionScope.admin ne null}">
                 <a href="/admin" class="lien">Administration</a>

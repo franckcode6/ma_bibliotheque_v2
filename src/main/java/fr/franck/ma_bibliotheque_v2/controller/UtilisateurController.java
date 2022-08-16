@@ -40,7 +40,7 @@ public class UtilisateurController {
             return new ModelAndView("redirect:/connexion");
         } else if (utilisateur.getEmail().equals("admin@mabibliotheque.com")) {
             httpSession.setAttribute("admin", utilisateur);
-            return new ModelAndView("redirect:/admin/lecteurs");
+            return new ModelAndView("redirect:/admin");
         } else {
             httpSession.setAttribute("lecteurConnecte", utilisateur);
             return new ModelAndView("redirect:/livres");

@@ -20,11 +20,7 @@
         <h1><a href="/livres">Ma bibliothèque</a></h1>
         <nav class="d-flex justify-content-between">
             <c:if test="${sessionScope.lecteurConnecte ne null}">
-            <a href="/compte" class="lien">Mon compte</a>
-            </c:if>
-            <c:if test="${sessionScope.admin ne null}">
-                <a href="/admin" class="lien">Administration</a>
-                <a href="/admin/prets" class="lien ms-3">Prêts</a>
+            <a href="/compte" class="lien"><strong>${sessionScope.lecteurConnecte.prenom} ${sessionScope.lecteurConnecte.nom}</strong></a>
             </c:if>
             <c:if test="${sessionScope.lecteurConnecte ne null || sessionScope.admin ne null}">
             <a href="/deconnexion" class="lien ms-3">Déconnexion</a>
