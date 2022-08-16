@@ -39,12 +39,12 @@
 
 <main class="container">
     <h2>Nouveau Pret</h2>
-    <form action="/admin/prets/lecteur" method="get">
-        <label for="idUtilisateur">ID du lecteur</label>
-        <br>
-        <input type="number" id="idUtilisateur" name="id">
-        <br>
-        <input type="submit" value="Saisir" class="mt-3 btn btn-sm btn-success">
+    <form action="/admin/prets/lecteur" method="get" class="col-md-4">
+        <div class="mb-3">
+        <label for="idUtilisateur" class="form-label">ID du lecteur</label>
+        <input type="number" id="idUtilisateur" name="id" class="form-control">
+        </div>
+        <input type="submit" value="Saisir" class="btn btn-success">
     </form>
 </main>
 </body>
