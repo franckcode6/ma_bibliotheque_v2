@@ -30,6 +30,15 @@ public class AdminController {
     private final PretService pretService;
     private final TypeService typeService;
 
+    @GetMapping("/admin")
+    public ModelAndView adminGet() {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("adminDashboard");
+
+        return mav;
+    }
+
     @GetMapping("admin/lecteurs")
     public ModelAndView lecteursGet(@PageableDefault(size = NB_ELEMENTS_PAR_PAGE)
                                     Pageable pageable) {
