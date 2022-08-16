@@ -1,6 +1,8 @@
 package fr.franck.ma_bibliotheque_v2.controller;
 
+import fr.franck.ma_bibliotheque_v2.business.Lecteur;
 import fr.franck.ma_bibliotheque_v2.business.Utilisateur;
+import fr.franck.ma_bibliotheque_v2.service.PretService;
 import fr.franck.ma_bibliotheque_v2.service.UtilisateurService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpSession;
 @AllArgsConstructor
 public class UtilisateurController {
 
+    private final PretService pretService;
     private final UtilisateurService utilisateurService;
     private final HttpSession httpSession;
 
@@ -45,8 +48,20 @@ public class UtilisateurController {
     }
 
     @GetMapping("/deconnexion")
-	public ModelAndView deconnexionGet() {
-		httpSession.invalidate();
-		return new ModelAndView("redirect:/livres");
-	}
+    public ModelAndView deconnexionGet() {
+        httpSession.invalidate();
+        return new ModelAndView("redirect:/livres");
+    }
+
+    @GetMapping("/compte")
+    public ModelAndView compteGet() {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("compte");
+        Lecteur lecteur = (Lecteur) httpSession.getAttribute("lecteurConnecte");
+        mav.addObject("lecteurConnecte", lecteur);
+        mav.addObject("prets", pretService.recupererPrets(lecteur.getId()));
+
+        return mav;
+    }
 }
