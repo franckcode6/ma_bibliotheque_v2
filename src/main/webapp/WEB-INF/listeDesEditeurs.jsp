@@ -16,8 +16,8 @@
 
 <body>
 <header class="mb-5">
-    <div class="container d-flex align-items-center justify-content-between">
-        <h1><a href="/livres">Ma bibliothÃ¨que</a></h1>
+    <div class="container d-flex align-items-baseline justify-content-between">
+        <h1><a href="/livres">Ma bibliothèque</a></h1>
         <nav class="d-flex justify-content-between">
 
             <c:if test="${sessionScope.lecteurConnecte eq null && sessionScope.admin eq null}">
@@ -28,10 +28,10 @@
             </c:if>
             <c:if test="${sessionScope.admin ne null}">
                 <a href="/admin" class="lien">Administration</a>
-                <a href="/admin/prets" class="lien ms-3">PrÃªts</a>
+                <a href="/admin/prets" class="lien ms-3">Prêts</a>
             </c:if>
             <c:if test="${sessionScope.lecteurConnecte ne null || sessionScope.admin ne null}">
-                <a href="/deconnexion" class="lien ms-3">DÃ©connexion</a>
+                <a href="/deconnexion" class="lien ms-3">Déconnexion</a>
             </c:if>
         </nav>
     </div>

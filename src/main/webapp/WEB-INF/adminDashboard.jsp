@@ -16,7 +16,7 @@
 
 <body>
 <header class="mb-3">
-    <div class="container d-flex align-items-center justify-content-between">
+    <div class="container d-flex align-items-baseline justify-content-between">
         <h1><a href="/livres">Ma bibliothèque</a></h1>
         <nav class="d-flex justify-content-between">
             <c:if test="${sessionScope.admin ne null}">

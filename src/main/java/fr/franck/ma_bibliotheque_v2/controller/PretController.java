@@ -105,5 +105,4 @@ public class PretController {
 
         return new ModelAndView("redirect:/admin/prets");
     }
-
 }
