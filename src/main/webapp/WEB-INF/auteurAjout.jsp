@@ -19,7 +19,7 @@
     <div class="container d-flex align-items-center justify-content-between">
         <h1><a href="/livres">Ma bibliothèque</a></h1>
         <nav class="d-flex justify-content-between">
-            <a href="/pret" class="lien">Pret</a>
+            <a href="/admin/prets" class="lien">Pret</a>
             <a href="#" class="lien ms-3">Se connecter</a>
         </nav>
     </div>

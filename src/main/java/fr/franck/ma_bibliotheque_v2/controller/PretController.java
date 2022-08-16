@@ -23,7 +23,7 @@ public class PretController {
     private final LivreService livreService;
     private final PretService pretService;
 
-    @GetMapping("pret")
+    @GetMapping("admin/prets")
     public ModelAndView pretGet() {
         ModelAndView mav = new ModelAndView();
 
@@ -32,7 +32,7 @@ public class PretController {
         return mav;
     }
 
-    @GetMapping("pret/lecteur")
+    @GetMapping("admin/prets/lecteur")
     public ModelAndView pretLecteurGet(@RequestParam(name = "id") Long id) {
         ModelAndView mav = new ModelAndView();
 
@@ -44,7 +44,7 @@ public class PretController {
         return mav;
     }
 
-    @PostMapping("pret/lecteur")
+    @PostMapping("admin/prets/lecteur")
     public ModelAndView pretLecteurPost(@RequestParam(name = "id") Long id,
                                         @RequestParam(name = "LIVRE1_ID") Long livre1Id,
                                         @RequestParam(name = "LIVRE2_ID", required = false) Long livre2Id,
@@ -74,10 +74,10 @@ public class PretController {
             pretService.ajouterPret(lecteur, livre4);
         }
 
-        return new ModelAndView("redirect:/pret");
+        return new ModelAndView("redirect:/admin/prets");
     }
 
-    @GetMapping("retour/lecteur")
+    @GetMapping("admin/prets/lecteur/retour")
     public ModelAndView retourLecteurGet(@RequestParam(name = "id") Long id) {
         ModelAndView mav = new ModelAndView();
 
@@ -88,7 +88,7 @@ public class PretController {
         return mav;
     }
 
-    @PostMapping("retour/lecteur")
+    @PostMapping("admin/prets/lecteur/retour")
     public ModelAndView retourLecteurPost(@RequestParam(name = "PRET_ID", required = false) List<Long> ids) {
 
         List<Pret> prets = pretService.recupererPrets(ids);
@@ -103,7 +103,7 @@ public class PretController {
             }
         }
 
-        return new ModelAndView("redirect:/pret");
+        return new ModelAndView("redirect:/admin/prets");
     }
 
 }
