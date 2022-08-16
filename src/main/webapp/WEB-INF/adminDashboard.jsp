@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<header class="mb-5">
+<header class="mb-3">
     <div class="container d-flex align-items-center justify-content-between">
         <h1><a href="/livres">Ma bibliothèque</a></h1>
         <nav class="d-flex justify-content-between">
@@ -51,6 +51,13 @@
     </section>
 
     <section class="mb-3">
+        <h2>Editeurs</h2>
+        <a href="/admin/editeurs" class="btn btn-lg btn-outline-dark col-md-6 mb-2">Liste des editeurs</a>
+        <br>
+        <a href="/admin/editeurs/ajouter" class="btn btn-lg btn-outline-success col-md-6">Ajouter un editeur</a>
+    </section>
+
+    <section class="mb-5">
         <h2>Livres</h2>
         <a href="/livres" class="btn btn-lg btn-outline-dark col-md-6 mb-2">Liste des livres</a>
         <br>
