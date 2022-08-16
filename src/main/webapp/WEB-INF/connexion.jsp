@@ -47,7 +47,7 @@
             <input type="password" id="mdp" name="MDP" class="form-control">
         </div>
 
-        <input type="submit" value="Se connecter">
+        <input type="submit" value="Se connecter" class="btn btn-success">
     </form>
 </main>
 </body>
