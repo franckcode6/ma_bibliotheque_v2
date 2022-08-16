@@ -83,7 +83,7 @@ public class AjoutDonneesInitiales implements CommandLineRunner {
         if (adminDao.count() == 0) {
             adminDao.save(new Admin(faker.name().lastName(),
                     faker.name().firstName(),
-                    "admin@test@com",
+                    "admin@mabibliotheque.com",
                     "12345",
                     "0610111213"));
         }
