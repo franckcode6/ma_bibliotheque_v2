@@ -19,8 +19,17 @@
     <div class="container d-flex align-items-center justify-content-between">
         <h1><a href="/livres">Ma bibliothèque</a></h1>
         <nav class="d-flex justify-content-between">
-            <a href="/admin/prets" class="lien">Pret</a>
-            <a href="/connexion" class="lien ms-3">Se connecter</a>
+
+            <c:if test="${sessionScope.lecteurConnecte eq null && sessionScope.admin eq null}">
+            <a href="/connexion" class="lien">Se connecter</a>
+            </c:if>
+            <c:if test="${sessionScope.lecteurConnecte ne null}">
+            <a href="/compte" class="lien">Mon compte</a>
+            </c:if>
+            <c:if test="${sessionScope.admin ne null}">
+                <a href="/admin" class="lien">Administration</a>
+                <a href="/admin/prets" class="lien ms-3">Enregistrer un nouveau pret</a>
+            </c:if>
         </nav>
     </div>
 </header>
@@ -28,7 +37,9 @@
 <main class="container">
     <div class="d-flex justify-content-between align-items-center mb-3 pe-5">
         <h2>Liste des livres</h2>
+        <c:if test="${sessionScope.admin ne null}">
         <a href="/admin/livres/ajouter" class="btn btn-success">Nouveau livre</a>
+        </c:if>
     </div>
 
     <table class="mx-auto table table-hover">
