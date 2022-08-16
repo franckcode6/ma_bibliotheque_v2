@@ -73,6 +73,17 @@ public class AdminController {
         return new ModelAndView("redirect:/admin/lecteurs");
     }
 
+    @GetMapping("admin/lecteurs/details")
+    public ModelAndView lecteursDetailsGet(@RequestParam("id") Long id) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("detailsLecteur");
+        mav.addObject("lecteur", lecteurService.recupererLecteur(id));
+        mav.addObject("prets", pretService.recupererPrets(id));
+
+        return mav;
+    }
+
     @GetMapping("admin/lecteur/supprimer")
     public ModelAndView supprimerLecteurGet(@RequestParam(name = "id", required = true) Long id) {
 

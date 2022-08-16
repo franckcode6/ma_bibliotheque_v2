@@ -21,17 +21,17 @@
         <nav class="d-flex justify-content-between">
 
             <c:if test="${sessionScope.lecteurConnecte eq null && sessionScope.admin eq null}">
-            <a href="/connexion" class="lien">Se connecter</a>
+                <a href="/connexion" class="lien">Se connecter</a>
             </c:if>
             <c:if test="${sessionScope.lecteurConnecte ne null}">
-            <a href="/compte" class="lien">Mon compte</a>
+                <a href="/compte" class="lien">Mon compte</a>
             </c:if>
             <c:if test="${sessionScope.admin ne null}">
                 <a href="/admin" class="lien">Administration</a>
                 <a href="/admin/prets" class="lien ms-3">Prêts</a>
             </c:if>
             <c:if test="${sessionScope.lecteurConnecte ne null || sessionScope.admin ne null}">
-            <a href="/deconnexion" class="lien ms-3">Déconnexion</a>
+                <a href="/deconnexion" class="lien ms-3">Déconnexion</a>
             </c:if>
         </nav>
     </div>
@@ -64,7 +64,7 @@
                 <td>${lecteur.email}</td>
                 <td>${lecteur.dateDeNaissance}</td>
                 <td>
-                    <a href="/admin/lecteur/supprimer?id=${lecteur.id}" class="btn btn-danger">Supprimer</a>
+                    <a href="/admin/lecteurs/details?id=${lecteur.id}" class="btn btn-primary">Détails</a>
                 </td>
             </tr>
         </c:forEach>
