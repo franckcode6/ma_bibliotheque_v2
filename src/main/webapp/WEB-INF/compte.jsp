@@ -20,10 +20,11 @@
         <h1><a href="/livres">Ma bibliothèque</a></h1>
         <nav class="d-flex justify-content-between">
             <c:if test="${sessionScope.lecteurConnecte ne null}">
-            <a href="/compte" class="lien"><strong>${sessionScope.lecteurConnecte.prenom} ${sessionScope.lecteurConnecte.nom}</strong></a>
+                <a href="/compte"
+                   class="lien"><strong>${sessionScope.lecteurConnecte.prenom} ${sessionScope.lecteurConnecte.nom}</strong></a>
             </c:if>
             <c:if test="${sessionScope.lecteurConnecte ne null || sessionScope.admin ne null}">
-            <a href="/deconnexion" class="lien ms-3">Déconnexion</a>
+                <a href="/deconnexion" class="lien ms-3">Déconnexion</a>
             </c:if>
         </nav>
     </div>
@@ -32,7 +33,8 @@
 <main class="container">
     <section class="row">
         <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
-            <h2>${sessionScope.lecteurConnecte.id} - ${sessionScope.lecteurConnecte.nom} ${sessionScope.lecteurConnecte.prenom}</h2>
+            <h2>${sessionScope.lecteurConnecte.id}
+                - ${sessionScope.lecteurConnecte.nom} ${sessionScope.lecteurConnecte.prenom}</h2>
             <ul>
                 <li>Email : ${sessionScope.lecteurConnecte.email}</li>
                 <li>Né le : ${sessionScope.lecteurConnecte.dateDeNaissance}</li>
@@ -64,5 +66,9 @@
         </div>
     </section>
 </main>
+
+<footer class="text-center py-3">
+    <a href="https://github.com/franckcode6">2022 @Franck</a>
+</footer>
 </body>
 </html>

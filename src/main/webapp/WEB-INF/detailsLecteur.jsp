@@ -67,5 +67,9 @@
         </div>
     </section>
 </main>
+
+<footer class="text-center py-3">
+    <a href="https://github.com/franckcode6">2022 @Franck</a>
+</footer>
 </body>
 </html>

@@ -21,17 +21,17 @@
         <nav class="d-flex justify-content-between">
 
             <c:if test="${sessionScope.lecteurConnecte eq null && sessionScope.admin eq null}">
-            <a href="/connexion" class="lien">Se connecter</a>
+                <a href="/connexion" class="lien">Se connecter</a>
             </c:if>
             <c:if test="${sessionScope.lecteurConnecte ne null}">
-            <a href="/compte" class="lien">Mon compte</a>
+                <a href="/compte" class="lien">Mon compte</a>
             </c:if>
             <c:if test="${sessionScope.admin ne null}">
                 <a href="/admin" class="lien">Administration</a>
                 <a href="/admin/prets" class="lien ms-3">Prêts</a>
             </c:if>
             <c:if test="${sessionScope.lecteurConnecte ne null || sessionScope.admin ne null}">
-            <a href="/deconnexion" class="lien ms-3">Déconnexion</a>
+                <a href="/deconnexion" class="lien ms-3">Déconnexion</a>
             </c:if>
         </nav>
     </div>
@@ -41,11 +41,15 @@
     <h2>Nouveau Pret</h2>
     <form action="/admin/prets/lecteur" method="get" class="col-md-4">
         <div class="mb-3">
-        <label for="idUtilisateur" class="form-label">ID du lecteur</label>
-        <input type="number" id="idUtilisateur" name="id" class="form-control">
+            <label for="idUtilisateur" class="form-label">ID du lecteur</label>
+            <input type="number" id="idUtilisateur" name="id" class="form-control">
         </div>
         <input type="submit" value="Saisir" class="btn btn-success">
     </form>
 </main>
+
+<footer class="text-center py-3">
+    <a href="https://github.com/franckcode6">2022 @Franck</a>
+</footer>
 </body>
 </html>

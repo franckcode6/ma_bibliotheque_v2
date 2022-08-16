@@ -64,5 +64,9 @@
         <a href="/admin/livres/ajouter" class="btn btn-lg btn-outline-success col-md-6">Ajouter un livre</a>
     </section>
 </main>
+
+<footer class="text-center py-3">
+    <a href="https://github.com/franckcode6">2022 @Franck</a>
+</footer>
 </body>
 </html>
