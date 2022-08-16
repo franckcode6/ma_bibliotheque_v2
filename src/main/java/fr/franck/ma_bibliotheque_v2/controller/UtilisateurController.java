@@ -43,4 +43,10 @@ public class UtilisateurController {
             return new ModelAndView("redirect:/livres");
         }
     }
+
+    @GetMapping("/deconnexion")
+	public ModelAndView deconnexionGet() {
+		httpSession.invalidate();
+		return new ModelAndView("redirect:/livres");
+	}
 }

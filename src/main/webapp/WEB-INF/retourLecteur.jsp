@@ -27,7 +27,10 @@
             </c:if>
             <c:if test="${sessionScope.admin ne null}">
                 <a href="/admin" class="lien">Administration</a>
-                <a href="/admin/prets" class="lien ms-3">Enregistrer un nouveau pret</a>
+                <a href="/admin/prets" class="lien ms-3">Prêts</a>
+            </c:if>
+            <c:if test="${sessionScope.lecteurConnecte ne null || sessionScope.admin ne null}">
+            <a href="/deconnexion" class="lien ms-3">Déconnexion</a>
             </c:if>
         </nav>
     </div>
