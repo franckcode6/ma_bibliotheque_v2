@@ -23,4 +23,6 @@ public interface LivreService {
                       Type type);
 
     void supprimerLivre(Long id);
+
+    List<Livre> recupererLivresParTitre(String titre);
 }

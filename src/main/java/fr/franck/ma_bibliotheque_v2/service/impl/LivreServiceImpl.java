@@ -48,4 +48,9 @@ public class LivreServiceImpl implements LivreService {
     public void supprimerLivre(Long id) {
         livreDao.deleteById(id);
     }
+
+    @Override
+    public List<Livre> recupererLivresParTitre(String titre) {
+        return livreDao.findAllByTitreContaining(titre);
+    }
 }

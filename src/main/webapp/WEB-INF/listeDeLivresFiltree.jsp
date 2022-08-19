@@ -39,17 +39,13 @@
 </header>
 
 <main class="container">
-    <div class="d-flex justify-content-between align-items-baseline mb-3">
+    <div class="d-flex justify-content-between align-items-center mb-3 pe-5">
         <h2>Liste des livres</h2>
         <c:if test="${sessionScope.admin ne null}">
             <a href="/admin/livres/ajouter" class="btn btn-success">Nouveau livre</a>
         </c:if>
-        <form action="/livres/filtrer" method="get">
-            <label for="titre" class="me-2">
-                <strong>Titre</strong>
-            </label>
-            <input type="text" id="titre" name="titre">
-            <input type="submit" value="Filtrer">
+        <form action="/livres/filtrer" method="get"><input type="text" name="titre">
+            <input type="submit" value="filtrer">
         </form>
     </div>
 
@@ -84,7 +80,7 @@
         </thead>
 
         <tbody>
-        <c:forEach items="${pageDeLivres.content}" var="livre">
+        <c:forEach items="${livres}" var="livre">
             <tr>
                 <th>${livre.id}</th>
                 <td>${livre.titre}</td>
@@ -105,18 +101,6 @@
         </c:forEach>
         </tbody>
     </table>
-
-    <h3 class="text-center mt-5">
-        <c:if test="${!pageDeLivres.first}">
-            <a href="livres?page=0&sort=${sort}">&#x23EE;</a>
-            <a href="livres?page=${pageDeLivres.number-1}&sort=${sort}">&#x23EA;</a>
-        </c:if>
-        Page ${pageDeLivres.getNumber()+1}
-        <c:if test="${!pageDeLivres.last}">
-            <a href="livres?page=${pageDeLivres.number+1}&sort=${sort}">&#x23E9;</a>
-            <a href="livres?page=${pageDeLivres.totalPages - 1}&sort=${sort}">&#x23ED;</a>
-        </c:if>
-    </h3>
 </main>
 
 <footer class="text-center py-3">

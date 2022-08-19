@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 @AllArgsConstructor
 public class LivreController {
 
-    private static final int NB_LIVRES_PAR_PAGE = 10;
+    private static final int NB_LIVRES_PAR_PAGE = 20;
 
     private final LivreService livreService;
 
@@ -24,6 +24,16 @@ public class LivreController {
 
         mav.addObject("pageDeLivres", livreService.recupererLivres(pageable));
         mav.setViewName("listeDeLivres");
+
+        return mav;
+    }
+
+    @GetMapping({"livres/filtrer", "/filtrer"})
+    public ModelAndView livresGet(@RequestParam(name = "titre") String titre) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.addObject("livres", livreService.recupererLivresParTitre(titre));
+        mav.setViewName("listeDeLivresFiltree");
 
         return mav;
     }
