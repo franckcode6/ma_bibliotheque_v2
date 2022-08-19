@@ -47,7 +47,10 @@
         <thead class="table-info">
         <tr>
             <th>ID</th>
-            <th>Nom</th>
+            <th>
+                <a href="editeurs?sort=nom">Nom</a>
+                <a href="editeurs?sort=nom,DESC">&#8595;</a>
+            </th>
             <th>Action</th>
         </tr>
         </thead>
