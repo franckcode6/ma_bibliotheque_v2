@@ -47,10 +47,22 @@
         <thead class="table-info">
         <tr>
             <th>ID</th>
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>Email</th>
-            <th>Date de naissance</th>
+            <th>
+                <a href="lecteurs?sort=nom">Nom</a>
+                <a href="lecteurs?sort=nom,DESC">&#8595;</a>
+            </th>
+            <th>
+                <a href="lecteurs?sort=prenom">Prenom</a>
+                <a href="lecteurs?sort=prenom,DESC">&#8595;</a>
+            </th>
+            <th>
+                <a href="lecteurs?sort=email">Email</a>
+                <a href="lecteurs?sort=email,DESC">&#8595;</a>
+            </th>
+            <th>
+                <a href="lecteurs?sort=dateDeNaissance">Date de naissance</a>
+                <a href="lecteurs?sort=dateDeNaissance,DESC">&#8595;</a>
+            </th>
             <th>Action</th>
         </tr>
         </thead>
