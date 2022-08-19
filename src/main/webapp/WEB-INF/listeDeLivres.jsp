@@ -21,17 +21,18 @@
         <nav class="d-flex justify-content-between">
 
             <c:if test="${sessionScope.lecteurConnecte eq null && sessionScope.admin eq null}">
-            <a href="/connexion" class="lien">Se connecter</a>
+                <a href="/connexion" class="lien">Se connecter</a>
             </c:if>
             <c:if test="${sessionScope.lecteurConnecte ne null}">
-            <a href="/compte" class="lien"><strong>${sessionScope.lecteurConnecte.prenom} ${sessionScope.lecteurConnecte.nom}</strong></a>
+                <a href="/compte"
+                   class="lien"><strong>${sessionScope.lecteurConnecte.prenom} ${sessionScope.lecteurConnecte.nom}</strong></a>
             </c:if>
             <c:if test="${sessionScope.admin ne null}">
                 <a href="/admin" class="lien">Administration</a>
                 <a href="/admin/prets" class="lien ms-3">Prêts</a>
             </c:if>
             <c:if test="${sessionScope.lecteurConnecte ne null || sessionScope.admin ne null}">
-            <a href="/deconnexion" class="lien ms-3">Déconnexion</a>
+                <a href="/deconnexion" class="lien ms-3">Déconnexion</a>
             </c:if>
         </nav>
     </div>
@@ -41,7 +42,7 @@
     <div class="d-flex justify-content-between align-items-center mb-3 pe-5">
         <h2>Liste des livres</h2>
         <c:if test="${sessionScope.admin ne null}">
-        <a href="/admin/livres/ajouter" class="btn btn-success">Nouveau livre</a>
+            <a href="/admin/livres/ajouter" class="btn btn-success">Nouveau livre</a>
         </c:if>
     </div>
 
@@ -49,13 +50,28 @@
         <thead class="table-info">
         <tr>
             <th>ID</th>
-            <th>Titre</th>
-            <th>Auteur</th>
-            <th>Editeur</th>
+            <th>
+                <a href="livres?sort=titre">Titre</a>
+                <a href="livres?sort=titre,DESC">&#8595;</a>
+            </th>
+            <th>
+                <a href="livres?sort=auteur.nom">Auteur</a>
+                <a href="livres?sort=auteur.nom,DESC">&#8595;</a>
+            </th>
+            <th>
+                <a href="livres?sort=editeur.nom">Editeur</a>
+                <a href="livres?sort=editeur.nom,DESC">&#8595;</a>
+            </th>
             <th>Année</th>
-            <th>Catégorie</th>
-            <th>Type</th>
-            <th>Disponibilité</th>
+            <th>
+                <a href="livres?sort=categorie.nom">Catégorie</a>
+                <a href="livres?sort=categorie.nom,DESC">&#8595;</a>
+            </th>
+            <th>
+                <a href="livres?sort=type.nom">Type</a>
+                <a href="livres?sort=type.nom,DESC">&#8595;</a>
+            </th>
+            <th>Stock</th>
             <th>Action</th>
         </tr>
         </thead>
