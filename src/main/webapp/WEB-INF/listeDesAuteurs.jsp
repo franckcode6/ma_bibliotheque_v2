@@ -47,10 +47,22 @@
         <thead class="table-info">
         <tr>
             <th>ID</th>
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>Date de naissance</th>
-            <th>Nationalité</th>
+            <th>
+                <a href="auteurs?sort=nom">Nom</a>
+                <a href="auteurs?sort=nom,DESC">&#8595;</a>
+            </th>
+            <th>
+                <a href="auteurs?sort=prenom">Prenom</a>
+                <a href="auteurs?sort=prenom,DESC">&#8595;</a>
+            </th>
+            <th>
+                <a href="auteurs?sort=dateDeNaissance">Date de naissance</a>
+                <a href="auteurs?sort=dateDeNaissance,DESC">&#8595;</a>
+            </th>
+            <th>
+                <a href="auteurs?sort=nationalite">Nationalité</a>
+                <a href="auteurs?sort=nationalite,DESC">&#8595;</a>
+            </th>
             <th>Action</th>
         </tr>
         </thead>
