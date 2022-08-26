@@ -71,7 +71,7 @@
                     </div>
                 </form>
 
-               <form action="/livres/filtrer" method="get" class="mb-2 col-md-6">
+                <form action="/livres/filtrer" method="get" class="mb-2 col-md-6">
                     <label for="editeur" class="me-2 form-label">
                         <strong>Editeur</strong>
                     </label>
@@ -86,7 +86,12 @@
                         <strong>Categorie</strong>
                     </label>
                     <div class="d-flex">
-                        <input type="text" id="categorie" name="auteur" class="form-control">
+                        <select name="categorie" id="categorie" class="form-select">
+                            <option value="">Sélectionner une catégorie</option>
+                            <c:forEach items="${categories}" var="categorie">
+                                <option value="${categorie.nom}">${categorie.nom}</option>
+                            </c:forEach>
+                        </select>
                         <input type="submit" value="Filtrer" class="btn btn-sm btn-success ms-1">
                     </div>
                 </form>
@@ -96,7 +101,12 @@
                         <strong>Type</strong>
                     </label>
                     <div class="d-flex">
-                        <input type="text" id="type" name="auteur" class="form-control">
+                        <select name="type" id="type" class="form-select">
+                            <option value="">Sélectionner un type</option>
+                            <c:forEach items="${types}" var="type">
+                                <option value="${type.nom}">${type.nom}</option>
+                            </c:forEach>
+                        </select>
                         <input type="submit" value="Filtrer" class="btn btn-sm btn-success ms-1">
                     </div>
                 </form>

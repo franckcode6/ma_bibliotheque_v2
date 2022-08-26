@@ -1,6 +1,8 @@
 package fr.franck.ma_bibliotheque_v2.controller;
 
+import fr.franck.ma_bibliotheque_v2.service.CategorieService;
 import fr.franck.ma_bibliotheque_v2.service.LivreService;
+import fr.franck.ma_bibliotheque_v2.service.TypeService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -15,7 +17,9 @@ public class LivreController {
 
     private static final int NB_LIVRES_PAR_PAGE = 20;
 
+    private final CategorieService categorieService;
     private final LivreService livreService;
+    private final TypeService typeService;
 
     @GetMapping({"livres", "/"})
     public ModelAndView livresGet(@PageableDefault(size = NB_LIVRES_PAR_PAGE)
@@ -23,6 +27,8 @@ public class LivreController {
         ModelAndView mav = new ModelAndView();
 
         mav.addObject("pageDeLivres", livreService.recupererLivres(pageable));
+        mav.addObject("categories", categorieService.recupererCategories());
+        mav.addObject("types", typeService.recupererTypes());
         mav.setViewName("listeDeLivres");
 
         return mav;
