@@ -40,7 +40,7 @@
         </header>
 
         <main class="container">
-            <div class="d-flex justify-content-between align-items-baseline mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
                 <h2>Liste des livres</h2>
                 <div>
                     <c:if test="${sessionScope.admin ne null}">
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <section id="filtres" class="my-3 pb-4 row">
+            <section id="filtres" class="my-3 pb-4 row cacher">
                 <form action="/livres/filtrer" method="get" class="mb-2">
                     <label for="titre" class="me-2 form-label">
                         <strong>Titre</strong>
