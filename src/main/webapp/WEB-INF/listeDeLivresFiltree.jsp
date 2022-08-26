@@ -24,8 +24,9 @@
                 <a href="/connexion" class="lien">Se connecter</a>
             </c:if>
             <c:if test="${sessionScope.lecteurConnecte ne null}">
-                <a href="/compte"
-                   class="lien"><strong>${sessionScope.lecteurConnecte.prenom} ${sessionScope.lecteurConnecte.nom}</strong></a>
+                <a href="/compte" class="lien">
+                    <strong>${sessionScope.lecteurConnecte.prenom} ${sessionScope.lecteurConnecte.nom}</strong>
+                </a>
             </c:if>
             <c:if test="${sessionScope.admin ne null}">
                 <a href="/admin" class="lien">Administration</a>
@@ -41,12 +42,7 @@
 <main class="container">
     <div class="d-flex justify-content-between align-items-center mb-3 pe-5">
         <h2>Liste des livres</h2>
-        <c:if test="${sessionScope.admin ne null}">
-            <a href="/admin/livres/ajouter" class="btn btn-success">Nouveau livre</a>
-        </c:if>
-        <form action="/livres/filtrer" method="get"><input type="text" name="titre">
-            <input type="submit" value="filtrer">
-        </form>
+        <a href="/livres" class="btn btn-secondary">Retour à la liste</a>
     </div>
 
     <table class="mx-auto table table-hover">

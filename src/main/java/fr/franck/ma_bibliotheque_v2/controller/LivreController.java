@@ -29,10 +29,19 @@ public class LivreController {
     }
 
     @GetMapping({"livres/filtrer", "/filtrer"})
-    public ModelAndView livresGet(@RequestParam(name = "titre") String titre) {
+    public ModelAndView livresGet(@RequestParam(name = "titre", required = false) String titre,
+                                  @RequestParam(name = "auteur", required = false) String auteur) {
         ModelAndView mav = new ModelAndView();
 
+        if (titre != null) {
         mav.addObject("livres", livreService.recupererLivresParTitre(titre));
+        }
+
+        if (auteur != null) {
+        mav.addObject("livres", livreService.recupererLivresParAuteur(auteur));
+        }
+
+
         mav.setViewName("listeDeLivresFiltree");
 
         return mav;

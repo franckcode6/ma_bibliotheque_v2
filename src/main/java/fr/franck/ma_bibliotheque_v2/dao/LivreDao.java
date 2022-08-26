@@ -9,4 +9,6 @@ import java.util.List;
 
 public interface LivreDao extends JpaRepository<Livre, Long> {
     List<Livre> findAllByTitreContaining(String titre);
+
+    List<Livre> findAllByAuteurNomContaining(String auteur);
 }
