@@ -40,7 +40,7 @@
 </header>
 
 <main class="container">
-    <div class="d-flex justify-content-between align-items-center mb-3 pe-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>Liste des livres</h2>
         <a href="/livres" class="btn btn-secondary">Retour à la liste</a>
     </div>

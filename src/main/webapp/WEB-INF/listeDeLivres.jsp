@@ -50,45 +50,55 @@
                 </div>
             </div>
 
-            <section id="filtres" class="cacher mb-3">
-                <form action="/livres/filtrer" method="get">
-                    <label for="titre" class="me-2">
+            <section id="filtres" class="my-3 pb-4 row">
+                <form action="/livres/filtrer" method="get" class="mb-2">
+                    <label for="titre" class="me-2 form-label">
                         <strong>Titre</strong>
                     </label>
-                    <input type="text" id="titre" name="titre">
-                    <input type="submit" value="Filtrer">
+                    <div class="d-flex">
+                        <input type="text" id="titre" name="titre" class="form-control">
+                        <input type="submit" value="Filtrer" class="btn btn-sm btn-success ms-1">
+                    </div>
                 </form>
 
-                <form action="/livres/filtrer" method="get">
-                    <label for="auteur" class="me-2">
-                        <strong>Nom auteur</strong>
+                <form action="/livres/filtrer" method="get" class="mb-2 col-md-6">
+                    <label for="auteur" class="me-2 form-label">
+                        <strong>Auteur</strong>
                     </label>
-                    <input type="text" id="auteur" name="auteur">
-                    <input type="submit" value="Filtrer">
+                    <div class="d-flex">
+                        <input type="text" id="auteur" name="auteur" class="form-control">
+                        <input type="submit" value="Filtrer" class="btn btn-sm btn-success ms-1">
+                    </div>
                 </form>
 
-                <form action="/livres/filtrer" method="get">
-                    <label for="editeur" class="me-2">
+               <form action="/livres/filtrer" method="get" class="mb-2 col-md-6">
+                    <label for="editeur" class="me-2 form-label">
                         <strong>Editeur</strong>
                     </label>
-                    <input type="text" id="editeur" name="editeur">
-                    <input type="submit" value="Filtrer">
+                    <div class="d-flex">
+                        <input type="text" id="editeur" name="auteur" class="form-control">
+                        <input type="submit" value="Filtrer" class="btn btn-sm btn-success ms-1">
+                    </div>
                 </form>
 
-                <form action="/livres/filtrer" method="get">
-                    <label for="categorie" class="me-2">
-                        <strong>Catégorie</strong>
+                <form action="/livres/filtrer" method="get" class="mb-2 col-md-6">
+                    <label for="categorie" class="me-2 form-label">
+                        <strong>Categorie</strong>
                     </label>
-                    <input type="text" id="categorie" name="categorie">
-                    <input type="submit" value="Filtrer">
+                    <div class="d-flex">
+                        <input type="text" id="categorie" name="auteur" class="form-control">
+                        <input type="submit" value="Filtrer" class="btn btn-sm btn-success ms-1">
+                    </div>
                 </form>
 
-                <form action="/livres/filtrer" method="get">
-                    <label for="type" class="me-2">
+                <form action="/livres/filtrer" method="get" class="mb-2 col-md-6">
+                    <label for="type" class="me-2 form-label">
                         <strong>Type</strong>
                     </label>
-                    <input type="text" id="type" name="type">
-                    <input type="submit" value="Filtrer">
+                    <div class="d-flex">
+                        <input type="text" id="type" name="auteur" class="form-control">
+                        <input type="submit" value="Filtrer" class="btn btn-sm btn-success ms-1">
+                    </div>
                 </form>
             </section>
 
