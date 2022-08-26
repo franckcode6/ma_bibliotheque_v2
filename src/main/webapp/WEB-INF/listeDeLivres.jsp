@@ -45,10 +45,10 @@
                 <c:if test="${sessionScope.admin ne null}">
                     <a href="/admin/livres/ajouter" class="btn btn-success">Nouveau livre</a>
                 </c:if>
-                <button>Filtrer</button>
+                <button id="bouton-filtre">Filtrer</button>
             </div>
 
-            <div class="mb-3">
+            <div id="filtres" class="cacher mb-3">
                 <form action="/livres/filtrer" method="get">
                     <label for="titre" class="me-2">
                         <strong>Titre</strong>
@@ -135,5 +135,9 @@
         <footer class="text-center py-3">
             <a href="https://github.com/franckcode6">2022 @Franck</a>
         </footer>
+
+        <script>
+            <%@include file="script/script.js"%>
+        </script>
     </body>
 </html>

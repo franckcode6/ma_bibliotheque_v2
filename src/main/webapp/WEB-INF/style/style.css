@@ -11,6 +11,10 @@ footer{
     margin-top: auto;
 }
 
+.cacher {
+  display: none;
+}
+
 .cadre {
   border : 20px solid lightblue;
   border-radius: 20px;
