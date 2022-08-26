@@ -11,4 +11,10 @@ public interface LivreDao extends JpaRepository<Livre, Long> {
     List<Livre> findAllByTitreContaining(String titre);
 
     List<Livre> findAllByAuteurNomContaining(String auteur);
+
+    List<Livre> findAllByEditeurNomContaining(String editeur);
+
+    List<Livre> findAllByCategorieNomContaining(String categorie);
+
+    List<Livre> findAllByTypeNomContaining(String type);
 }

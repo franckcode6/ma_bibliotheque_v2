@@ -27,4 +27,10 @@ public interface LivreService {
     List<Livre> recupererLivresParTitre(String titre);
 
     List<Livre> recupererLivresParAuteur(String auteur);
+
+    List<Livre> recupererLivresParEditeur(String editeur);
+
+    List<Livre> recupererLivresParCategorie(String categorie);
+
+    List<Livre> recupererLivresParType(String type);
 }

@@ -30,7 +30,10 @@ public class LivreController {
 
     @GetMapping({"livres/filtrer", "/filtrer"})
     public ModelAndView livresGet(@RequestParam(name = "titre", required = false) String titre,
-                                  @RequestParam(name = "auteur", required = false) String auteur) {
+                                  @RequestParam(name = "auteur", required = false) String auteur,
+                                  @RequestParam(name = "editeur", required = false) String editeur,
+                                  @RequestParam(name = "categorie", required = false) String categorie,
+                                  @RequestParam(name = "type", required = false) String type) {
         ModelAndView mav = new ModelAndView();
 
         if (titre != null) {
@@ -41,6 +44,17 @@ public class LivreController {
         mav.addObject("livres", livreService.recupererLivresParAuteur(auteur));
         }
 
+        if (editeur != null) {
+        mav.addObject("livres", livreService.recupererLivresParEditeur(editeur));
+        }
+
+        if (categorie != null) {
+        mav.addObject("livres", livreService.recupererLivresParCategorie(categorie));
+        }
+
+        if (type != null) {
+        mav.addObject("livres", livreService.recupererLivresParType(type));
+        }
 
         mav.setViewName("listeDeLivresFiltree");
 

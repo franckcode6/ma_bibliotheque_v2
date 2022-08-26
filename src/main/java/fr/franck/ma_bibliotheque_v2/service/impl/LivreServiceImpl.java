@@ -58,4 +58,19 @@ public class LivreServiceImpl implements LivreService {
     public List<Livre> recupererLivresParAuteur(String auteur) {
         return livreDao.findAllByAuteurNomContaining(auteur);
     }
+
+    @Override
+    public List<Livre> recupererLivresParEditeur(String editeur) {
+        return livreDao.findAllByEditeurNomContaining(editeur);
+    }
+
+    @Override
+    public List<Livre> recupererLivresParCategorie(String categorie) {
+        return livreDao.findAllByCategorieNomContaining(categorie);
+    }
+
+    @Override
+    public List<Livre> recupererLivresParType(String type) {
+        return livreDao.findAllByTypeNomContaining(type);
+    }
 }

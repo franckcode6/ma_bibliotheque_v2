@@ -42,13 +42,15 @@
         <main class="container">
             <div class="d-flex justify-content-between align-items-baseline mb-3">
                 <h2>Liste des livres</h2>
-                <c:if test="${sessionScope.admin ne null}">
-                    <a href="/admin/livres/ajouter" class="btn btn-success">Nouveau livre</a>
-                </c:if>
-                <button id="bouton-filtre">Filtrer</button>
+                <div>
+                    <c:if test="${sessionScope.admin ne null}">
+                        <a href="/admin/livres/ajouter" class="btn btn-success">Nouveau livre</a>
+                    </c:if>
+                    <button id="bouton-filtre" class="ms-2 btn btn-secondary">Filtrer</button>
+                </div>
             </div>
 
-            <div id="filtres" class="cacher mb-3">
+            <section id="filtres" class="cacher mb-3">
                 <form action="/livres/filtrer" method="get">
                     <label for="titre" class="me-2">
                         <strong>Titre</strong>
@@ -64,7 +66,31 @@
                     <input type="text" id="auteur" name="auteur">
                     <input type="submit" value="Filtrer">
                 </form>
-            </div>
+
+                <form action="/livres/filtrer" method="get">
+                    <label for="editeur" class="me-2">
+                        <strong>Editeur</strong>
+                    </label>
+                    <input type="text" id="editeur" name="editeur">
+                    <input type="submit" value="Filtrer">
+                </form>
+
+                <form action="/livres/filtrer" method="get">
+                    <label for="categorie" class="me-2">
+                        <strong>Catégorie</strong>
+                    </label>
+                    <input type="text" id="categorie" name="categorie">
+                    <input type="submit" value="Filtrer">
+                </form>
+
+                <form action="/livres/filtrer" method="get">
+                    <label for="type" class="me-2">
+                        <strong>Type</strong>
+                    </label>
+                    <input type="text" id="type" name="type">
+                    <input type="submit" value="Filtrer">
+                </form>
+            </section>
 
             <table class="mx-auto table table-hover">
                 <thead class="table-info">
